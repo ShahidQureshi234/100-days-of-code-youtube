@@ -1,0 +1,4 @@
+# Development/test dependencies (engine tests + PDF verification)
+-r requirements.txt
+pytest>=7.4
+pypdfium2>=4.0

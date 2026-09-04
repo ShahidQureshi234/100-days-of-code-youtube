@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-surface-950 text-slate-200 antialiased;
+  background-image:
+    radial-gradient(60rem 40rem at 15% -10%, rgba(99, 102, 241, 0.14), transparent 60%),
+    radial-gradient(50rem 35rem at 95% 0%, rgba(34, 211, 238, 0.08), transparent 55%);
+  background-attachment: fixed;
+}
+
+::selection {
+  @apply bg-accent-500/40 text-white;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-surface-700;
+}
+*::-webkit-scrollbar-thumb:hover {
+  @apply bg-surface-600;
+}
+
+/* Range slider theming (settings panel) */
+input[type="range"] {
+  @apply h-1.5 w-full cursor-pointer appearance-none rounded-full bg-surface-700;
+}
+input[type="range"]::-webkit-slider-thumb {
+  @apply h-4 w-4 appearance-none rounded-full border-2 border-accent-400 bg-surface-900 shadow-glow;
+}
+input[type="range"]::-moz-range-thumb {
+  @apply h-4 w-4 rounded-full border-2 border-accent-400 bg-surface-900;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent-600 px-5 py-2.5 text-sm font-semibold text-white
+      shadow-glow transition hover:bg-accent-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400
+      disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-surface-600 bg-surface-800/60 px-4 py-2
+      text-sm font-medium text-slate-300 transition hover:border-accent-500/60 hover:text-white
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .card {
+    @apply rounded-2xl border border-surface-700/70 bg-surface-900/70 shadow-card backdrop-blur-sm;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-surface-600 bg-surface-800/80 px-2.5 py-0.5 text-xs font-medium text-slate-300;
+  }
+}
