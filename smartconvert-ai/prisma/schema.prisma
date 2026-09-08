@@ -1,0 +1,62 @@
+// SmartConvertAI -- scan history & export job tracking.
+// SQLite by default (zero-config); swap DATABASE_URL to a PostgreSQL
+// connection string for production -- no schema changes required.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// One user visit / working set of pages.
+model ScanSession {
+  id        String      @id @default(cuid())
+  createdAt DateTime    @default(now())
+  userAgent String?
+  ipHash    String? // sha256 of client IP (no raw IPs stored)
+  pages     ScanPage[]
+  exports   ExportJob[]
+
+  @@index([createdAt])
+}
+
+/// One uploaded image: detection + processing artifacts + stats.
+model ScanPage {
+  id              String      @id // workspace UUID (matches the engine job)
+  sessionId       String
+  session         ScanSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  createdAt       DateTime    @default(now())
+  originalName    String
+  originalBytes   Int
+  width           Int
+  height          Int
+  mode            String // "bw" | "color"
+  cornersJson     String // normalized [[x,y] x 4] actually used
+  autoDetected    Boolean
+  processedBytes  Int?
+  processedFormat String? // "tiff-g4" | "dctdecode+flate-mask" | ...
+  processingMs    Int?
+  inkRatio        Float?
+
+  @@index([sessionId])
+  @@index([createdAt])
+}
+
+/// One PDF assembly event.
+model ExportJob {
+  id        String      @id @default(cuid())
+  sessionId String
+  session   ScanSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  createdAt DateTime    @default(now())
+  filename  String
+  pdfBytes  Int
+  pageCount Int
+  mode      String
+  strategy  String? // "ccitt-g4" | "color-mrc" | "color-plain"
+
+  @@index([sessionId])
+  @@index([createdAt])
+}

@@ -1,0 +1,38 @@
+{
+  "name": "smartconvert-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web-based document scanner replicating industrial Xerox/Canon machines: auto border detection, de-skew, Xerox-style B&W and MRC color filters, ultra-light PDF export.",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p 3000",
+    "lint": "next lint",
+    "engine:setup": "python3 -m venv python-engine/.venv && python-engine/.venv/bin/pip install --upgrade pip && python-engine/.venv/bin/pip install -r python-engine/requirements.txt",
+    "engine:test": "cd python-engine && python3 -m pytest tests -v",
+    "db:setup": "prisma generate && prisma db push",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push"
+  },
+  "dependencies": {
+    "@prisma/client": "5.22.0",
+    "framer-motion": "11.11.17",
+    "lucide-react": "0.462.0",
+    "next": "14.2.32",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.9.0",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.49",
+    "prisma": "5.22.0",
+    "tailwindcss": "3.4.15",
+    "typescript": "5.6.3"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}
