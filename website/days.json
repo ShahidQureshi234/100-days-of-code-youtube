@@ -1,0 +1,902 @@
+[
+  {
+    "id": "01-Day1-Intro-to-Python",
+    "day": 1,
+    "title": "Intro to Python",
+    "category": "Basics",
+    "code": "print(\"Hello World\")\nprint(5)",
+    "tutorial": "# Day 1 - What is Programming and Python?\n## What is Programming\nProgramming is a way for us to tell computers what to do. Computer is a very dumb machine and it only does what we tell it to do. Hence we learn programming and tell computers to do what we are very slow at - computation. \nIf I ask you to calculate 5+6, you will immediately say 11. \nHow about 23453453 X 56456?\n\nYou will start searching for a calculator or jump to a new tab to calculate the same. \nThis 100 days of code series will h",
+    "path": "01-Day1-Intro-to-Python"
+  },
+  {
+    "id": "02-Day2-Application-of-Python",
+    "day": 2,
+    "title": "Application of Python",
+    "category": "Basics",
+    "code": "import cv2\n\n#Loading The Cascade File\nface_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')\n\n#Reading the Input Image\n# image= cv2.imread('1.jpg')\nimage= cv2.imread('1.png')\n\n#Resizing the Image\nimg = cv2.resize(image,None,fx=0.3,fy=0.3)\n\n#Converting the image into grayscale image\nimgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n\n#Detecting The Faces\nfaces = face_cascade.detectMultiScale(imgGray, 1.2, 5)\n\n#Pointing The Faces\nfor (x,y,w,h) in faces:\n\tcv2.rectangle(img, (x,y), (x+w, y+h), (255,0,0),2)\n\n#Displaying The Output Image\ncv2.imshow('img', img)\ncv2.waitKey()",
+    "tutorial": "# Day 2 - My Python Success Story\n# Why I love python (And you will too...)\nWelcome to Day 2 of 100 days of code. Let me start with a story! \nBack in my college, I used to learn C and C++ programming in depth, used to score good marks. I created a bunch of printing, conditionals and loop program. Now what? I wanted to benefit from the same\nIn my second year of college, I started working (I mean actually working in the industry) with the python programming language. I was not so good with it but ",
+    "path": "02-Day2-Application-of-Python"
+  },
+  {
+    "id": "03-Day3-Modules-and-Pip",
+    "day": 3,
+    "title": "Modules and Pip",
+    "category": "Basics",
+    "code": "import pandas  # This is an example of external module\nimport hashlib  # This is an example of built in module\n\nprint(\"Hi\")\n\n# Dont worry about how to use these modules just yet!\npandas.read_csv(\"one.csv\")\nm = hashlib.sha256()\n",
+    "tutorial": "# Day 3 - Modules and pip in Python!\n\nModule is like a code library which can be used to borrow code written by somebody else in our python program. There are two types of modules in python:\n1. Built in Modules - These modules are ready to import and use and ships with the python interpreter. there is no need to install such modules explicitly.\n2. External Modules - These modules are imported from a third party file or can be installed using a package manager like pip or conda. Since this code i",
+    "path": "03-Day3-Modules-and-Pip"
+  },
+  {
+    "id": "04-Day4-Our-First-Program",
+    "day": 4,
+    "title": "Our First Program",
+    "category": "Basics",
+    "code": "print(\"Hello World\", 7)\nprint(5)\nprint(\"Bye\")\nprint(17*13)",
+    "tutorial": "# Day 4 - Our First Program\n\nToday we will write our first ever python program from scratch. It will consist of a bunch of print statements.\nprint can be used to print something on the console in python\n\n## Quick Quiz\n\nWrite a program to print a poem in Python. Choose the poem of your choice and publish your repl\n\n\n```python\nprint(\"---Your poem here---\")\n\n```\n\nPlease make sure you attempt this. Might be easy for some of you but please finish each and every task\n\n## [Next Lesson>>](https://replit",
+    "path": "04-Day4-Our-First-Program"
+  },
+  {
+    "id": "05-Day5-Comments-and-Print",
+    "day": 5,
+    "title": "Comments and Print",
+    "category": "Basics",
+    "code": "",
+    "tutorial": "# Day 5 - Comments, Escape sequence & Print in Python\n\nWelcome to Day 5 of 100DaysOfCode. Today we will talk about Comments, Escape Sequences and little bit more about print statement in Python.\nWe will also throw some light on Escape Sequences\n\n# Python Comments\nA comment is a part of the coding file that the programmer does not want to execute, rather the programmer uses it to either explain a block of code or to avoid the execution of a specific part of code while testing.\n\n## Single-Line Com",
+    "path": "05-Day5-Comments-and-Print"
+  },
+  {
+    "id": "06-Day6-Variables-and-Data-Types",
+    "day": 6,
+    "title": "Variables and Data Types",
+    "category": "Basics",
+    "code": "a = complex(8, 2)\nb = True\nc = \"Harry\"\nd = None\nprint(a)\nprint(b)\na1 = 9\nprint(a + a1)\nprint(\"The type of a is \", type(a))\nprint(\"The type of b is \", type(b))\nprint(\"The type of c is \", type(c))\n\n\nlist1 = [8, 2.3, [-4, 5], [\"apple\", \"banana\"]]\nprint(list1)\n\ntuple1 = ((\"parrot\", \"sparrow\"), (\"Lion\", \"Tiger\"))\nprint(tuple1)\n\ndict1 = {\"name\":\"Sakshi\", \"age\":20, \"canVote\":True}\nprint(dict1)",
+    "tutorial": "\n# Day 6 - Variables and Data Types\n## What is a variable?\nVariable is like a container that holds data. Very similar to how our containers in kitchen holds sugar, salt etc\nCreating a variable is like creating a placeholder in memory and assigning it some value. In Python its as easy as writing:\n```python\na = 1\nb = True\nc = \"Harry\"\nd = None\n```\n\nThese are four variables of different data types.\n\n## What is a Data Type?\nData type specifies the type of value a variable holds. This is required in p",
+    "path": "06-Day6-Variables-and-Data-Types"
+  },
+  {
+    "id": "07-Day7-Exercise-1-Create-a-Calculator",
+    "day": 7,
+    "title": "Exercise 1 Create A Calculator",
+    "category": "Exercise",
+    "code": "print(5+6)\nprint(15-6)\nprint(15*6)\nprint(15/6)\nprint(15//6)\nprint(5%3)\nprint(2**4)",
+    "tutorial": "# Operators\nPython has different types of operators for different operations. To create a calculator we require arithmetic operators.\n# Arithmetic operators\n\n\n|   Operator             |Operator Name                          |Example                         |\n|----------------|-------------------------------|-----------------------------|\n|+|`Addition`            |``` 15+7 ```            |\n|-|`Subtraction`            |``` 15-7 ```            |\n|*|`Multiplication`            |``` 5*7 ```          ",
+    "path": "07-Day7-Exercise-1-Create-a-Calculator"
+  },
+  {
+    "id": "08-Day8-Exercise-1-Create-a-Calculator-Solution",
+    "day": 8,
+    "title": "Exercise 1 Create A Calculator Solution",
+    "category": "Exercise",
+    "code": "a = 50\nb = 3\n\nprint(\"The value of\", a, \"+\", 3, \"is: \", a + b)\nprint(\"The value of\", a, \"-\", 3, \"is: \", a - b)\nprint(\"The value of\", a, \"*\", 3, \"is: \", a * b)\nprint(\"The value of\", a, \"/\", 3, \"is: \", a / b)\n",
+    "tutorial": "## Exercise 1 - Create a Calculator Solution\nCreate a calculator capable of performing addition, subtraction, multiplication and division operations on two numbers. Your program should format the output in a readable manner!\n\n## [Next Lesson>>](https://replit.com/@codewithharry/09-Day9-Typecasting-in-Python)\n",
+    "path": "08-Day8-Exercise-1-Create-a-Calculator-Solution"
+  },
+  {
+    "id": "09-Day9-Typecasting-in-Python",
+    "day": 9,
+    "title": "Typecasting in Python",
+    "category": "Basics",
+    "code": "a = \"1\"\n# a = 1\nb = \"2\"\n# b = 2\nprint(int(a) + int(b))\n\n# Implicit TypeCasting\nc = 1.9\nd = 8\n\nprint(c + d)",
+    "tutorial": "# Typecasting in python\nThe conversion of one data type into the other data type is known as type casting in python or type conversion in python.\n\nPython supports a wide variety of functions or methods like: int(), float(), str(), ord(), hex(), oct(), tuple(), set(), list(), dict(), etc. for the type casting in python.\n\n\n## Two Types of Typecasting:\n\n1. Explicit Conversion (Explicit type casting in python)\n2. Implicit Conversion (Implicit type casting in python).\n### Explicit typecasting:\nThe co",
+    "path": "09-Day9-Typecasting-in-Python"
+  },
+  {
+    "id": "10-Day10-Taking-User-Input",
+    "day": 10,
+    "title": "Taking User Input",
+    "category": "Basics",
+    "code": "a = input(\"Enter your name: \")\nprint(\"My name is\", a)\n\nx = input(\"Enter first number: \")\ny = input(\"Enter second number: \")\nprint(x  + y)\n\nprint(int(x) + int(y))",
+    "tutorial": "# Day 10 - Taking User Input in python\nIn python, we can take user input directly by using input() function.This input function gives a return value as string/character hence we have to pass that into a variable\n## Syntax:\n```python\nvariable=input()\n```\nBut input function returns the value as string. Hence we have to typecast them whenever required to another datatype.\n## Example:\n```python\nvariable=int(input())\nvariable=float(input())\n```\n\nWe can also display a text using input function. This w",
+    "path": "10-Day10-Taking-User-Input"
+  },
+  {
+    "id": "11-Day11-Strings",
+    "day": 11,
+    "title": "Strings",
+    "category": "Basics",
+    "code": "name = \"Harry\"\nfriend = \"Rohan\"\nanotherFriend = 'Lovish'\napple = '''He said, \nHi Harry\nhey I am good\n\"I want to eat an apple'''\n \nprint(\"Hello, \" + name)\n# print(apple) \nprint(name[0])\nprint(name[1])\nprint(name[2])\nprint(name[3])\nprint(name[4])\n# print(name[5]) # Throws an error\nprint(\"Lets use a for loop\\n\")\nfor character in apple:\n    print(character)",
+    "tutorial": "# What are strings?\nIn python, anything that you enclose between single or double quotation marks is considered a string. A string is essentially a sequence or array of textual data. Strings are used when working with Unicode characters. \n## Example\n```python\nname = \"Harry\"\nprint(\"Hello, \" + name)\n```\n## Output\nHello, Harry\n\nNote: It does not matter whether you enclose your strings in single or double quotes, the output remains the same. \n\nSometimes, the user might need to put quotation marks in",
+    "path": "11-Day11-Strings"
+  },
+  {
+    "id": "12-Day12-Strings-Slicing",
+    "day": 12,
+    "title": "Strings Slicing",
+    "category": "Basics",
+    "code": "fruit = \"Mango\"\nmangoLen = len(fruit)\nprint(mangoLen)\n# print(fruit[0:4]) # including 0 but not 4\n# print(fruit[1:4]) # including 1 but not 4\n# print(fruit[:5])\n# print(fruit[0:-3])\n# print(fruit[:len(fruit)-3])\nprint(fruit[-1:len(fruit) - 3])\nprint(fruit[-3:-1])\n\n# Quick Quiz:\n# nm = \"Harry\"\n# print(nm[-4:-2])\n# @codewithharry\n",
+    "tutorial": "# String Slicing & Operations on String\n# Length of a String\nWe can find the length of a string using len() function.\n\n## Example:\n```python\nfruit = \"Mango\"\nlen1 = len(fruit)\nprint(\"Mango is a\", len1, \"letter word.\")\n```\n## Output:\nMango is a 5 letter word.\n# String as an array\nA string is essentially a sequence of characters also called an array. Thus we can access the elements of this array. \n\n## Example:\n```python\npie = \"ApplePie\"\nprint(pie[:5])\nprint(pie[6])\t#returns character at specified i",
+    "path": "12-Day12-Strings-Slicing"
+  },
+  {
+    "id": "13-Day13-String-Methods",
+    "day": 13,
+    "title": "String Methods",
+    "category": "Basics",
+    "code": "# Strings are immutable\na = \"!!!Harry!! !!!!!!!!! Harry\"\nprint(len(a))\nprint(a)\nprint(a.upper())\nprint(a.lower())\nprint(a.rstrip(\"!\"))\nprint(a.replace(\"Harry\", \"John\"))\nprint(a.split(\" \"))\nblogHeading = \"introduction tO jS\"\nprint(blogHeading.capitalize())\n\nstr1 = \"Welcome to the Console!!!\"\nprint(len(str1))\nprint(len(str1.center(50)))\nprint(a.count(\"Harry\"))\n\nstr1 = \"Welcome to the Console !!!\"\nprint(str1.endswith(\"!!!\"))\n\nstr1 = \"Welcome to the Console !!!\"\nprint(str1.endswith(\"to\", 4, 10))\n\nstr1 = \"He's name is Dan. He is an honest man.\"\nprint(str1.find(\"ishh\"))\n# print(str1.index(\"ishh\"))\n\nstr1 = \"WelcomeToTheConsole\"\nprint(str1.isalnum())\nstr1 = \"Welcome\"\nprint(str1.isalpha())\n\nstr1 = \"hello world\"\nprint(str1.islower())\n\nstr1 = \"We wish you a Merry Christmas\\n\"\nprint(str1.isprintable())\nstr1 = \"         \"       #using Spacebar\nprint(str1.isspace())\nstr2 = \"  \"       #using Tab\nprint(str2.isspace())\n\nstr1 = \"World Health Organization\" \nprint(str1.istitle())\n\nstr2 = \"To kill a Mocking bird\"\nprint(str2.istitle())\n\nstr1 = \"Python is a Interpreted Language\" \nprint(str1.startswith(\"Python\"))\n\nstr1 = \"Python is a Interpreted Language\" \nprint(str1.swapcase())\n\nstr1 = \"His name is Dan. Dan is an honest man.\"\nprint(str1.title())",
+    "tutorial": "# String methods\nPython provides a set of built-in methods that we can use to alter and modify the strings.\n\n\n## upper() :\nThe upper() method converts a string to upper case.\n\n### Example:\n```python\nstr1 = \"AbcDEfghIJ\"\nprint(str1.upper())\n```\n### Output:\n```\nABCDEFGHIJ\n ```\n\n## lower()\nThe lower() method converts a string to lower case.\n### Example:\n```python\nstr1 = \"AbcDEfghIJ\"\nprint(str1.lower())\n```\n### Output:\n```\nabcdefghij\n ```\n\n## strip() :\nThe strip() method removes any white spaces befo",
+    "path": "13-Day13-String-Methods"
+  },
+  {
+    "id": "14-Day14-If-Else-Conditionals",
+    "day": 14,
+    "title": "If Else Conditionals",
+    "category": "Basics",
+    "code": "",
+    "tutorial": "# if-else Statements\nSometimes the programmer needs to check the evaluation of certain expression(s), whether the expression(s) evaluate to True or False. If the expression evaluates to False, then the program execution follows a different path than it would have if the expression had evaluated to True.\n\nBased on this, the conditional statements are further classified into following types:\n- if\n- if-else\n- if-else-elif\n- nested if-else-elif.\n## An if\u2026\u2026else statement evaluates like this:\n\n### if ",
+    "path": "14-Day14-If-Else-Conditionals"
+  },
+  {
+    "id": "15-Day15-Exercise-2-Good-Morning-Sir",
+    "day": 15,
+    "title": "Exercise 2 Good Morning Sir",
+    "category": "Exercise",
+    "code": "import time\ntimestamp = time.strftime('%H:%M:%S')\nprint(timestamp)\ntimestamp = time.strftime('%H')\nprint(timestamp)\ntimestamp = time.strftime('%M')\nprint(timestamp)\ntimestamp = time.strftime('%S')\nprint(timestamp)\n# https://docs.python.org/3/library/time.html#time.strftime",
+    "tutorial": "# Excersice 2: Good Morning Sir\nCreate a python program capable of greeting you with Good Morning, Good Afternoon and Good Evening. Your program should use time module to get the current hour. Here is a sample program and documentation link for you:\n```python\nimport time\ntimestamp = time.strftime('%H:%M:%S')\nprint(timestamp)\ntimestamp = time.strftime('%H')\nprint(timestamp)\ntimestamp = time.strftime('%M')\nprint(timestamp)\ntimestamp = time.strftime('%S')\nprint(timestamp)\n# https://docs.python.org/",
+    "path": "15-Day15-Exercise-2-Good-Morning-Sir"
+  },
+  {
+    "id": "16-Day-16-Match-Case",
+    "day": 16,
+    "title": "16 Match Case",
+    "category": "Intermediate",
+    "code": "\nx = int(input(\"Enter the value of x: \"))\n# x is the variable to match\nmatch x:\n    # if x is 0\n    case 0:\n        print(\"x is zero\")\n    # case with if-condition\n    case 4:\n        print(\"case is 4\")\n\n    case _ if x!=90:\n        print(x, \"is not 90\")\n    case _ if x!=80:\n        print(x, \"is not 80\")\n    case _:\n        print(x)",
+    "tutorial": "# Match Case Statements\nTo implement switch-case like characteristics very similar to if-else functionality, we use a match case in python. If you are coming from a C, C++ or Java like language, you must have heard of switch-case statements. If this is your first language, dont worry as I will tell you everything you need to know about match case statements in this video!\n\nA match statement will compare a given variable\u2019s value to different shapes, also referred to as the pattern. The main idea ",
+    "path": "16-Day-16-Match-Case"
+  },
+  {
+    "id": "17-Day17-For-Loops",
+    "day": 17,
+    "title": "For Loops",
+    "category": "Intermediate",
+    "code": "# name = 'Abhishek'\n# for i in name:\n#   print(i)\n#   if(i ==\"b\"):\n#     print(\"This is something special!\")\n    \n# colors = [\"Red\", \"Green\", \"Blue\", \"Yellow\"]\n# for color in colors:\n#   print(color)\n#   for i in color:\n#     print(i)\n\n# for k in range(5):\n#   print(k + 1)\n  \n# for k in range(1, 20001):\n#   print(k)\n\n  \nfor k in range(1, 12, 3):\n  print(k)",
+    "tutorial": "# Introduction to Loops\nSometimes a programmer wants to execute a group of statements a certain number of times. This can be done using loops. Based on this loops are further classified into following main types; \n- for loop\n- while loop \n# The for Loop\nfor loops can iterate over a sequence of iterable objects in python. Iterating over a sequence is nothing but iterating over strings, lists, tuples, sets and dictionaries.\n\n## Example: iterating over a string:\n\n```python \nname = 'Abhishek'\nfor i ",
+    "path": "17-Day17-For-Loops"
+  },
+  {
+    "id": "18-Day18-While-Loops",
+    "day": 18,
+    "title": "While Loops",
+    "category": "Intermediate",
+    "code": "i = int(input(\"Enter the number: \"))\nprint(i)\nwhile(i<=38):\n  i = int(input(\"Enter the number: \"))\n  print(i)\n\nprint(\"Done with the loop\")\n\n# count = 5\n# while (count > 0):\n#   print(count)\n#   count = count - 1\n# else:\n#   print(\"I am inside else\")\n\n# do {\n  # loop body;\n# }while(condition);",
+    "tutorial": "# Python while Loop\nAs the name suggests, while loops execute statements while the condition is True. As soon as the condition becomes False, the interpreter comes out of the while loop. \n## Example:\n\n```python \ncount = 5\nwhile (count > 0):\n  print(count)\n  count = count - 1\n```\n## Output:\n```\n5\n4\n3\n2\n1\n```\n\nHere, the count variable is set to 5 which decrements after each iteration. Depending upon the while loop condition, we need to either increment or decrement the counter variable (the variab",
+    "path": "18-Day18-While-Loops"
+  },
+  {
+    "id": "19-Day-19-break-and-continue",
+    "day": 19,
+    "title": "19 Break and Continue",
+    "category": "Intermediate",
+    "code": "# for i in range(12):\n#   if(i == 10):\n#     print(\"Skip the iteration\")\n#     continue\n#   print(\"5 X\", i, \"=\", 5 * i)\n  \ni = 0\nwhile True:\n  print(i)\n  i = i + 1\n  if(i%100 == 0):\n    break\n",
+    "tutorial": "# break statement\nThe break statement enables a program to skip over a part of the code. A break statement terminates the very loop it lies within.\n## example\n\n```python '\nfor i in range(1,101,1):\n    print(i ,end=\" \")\n    if(i==50):\n        break\n    else:\n        print(\"Mississippi\")\nprint(\"Thank you\")\n```\n### output\n```\n1 Mississippi\n2 Mississippi\n3 Mississippi\n4 Mississippi\n5 Mississippi\n.\n.\n.\n50 Mississippi\n```\n## Continue Statement\nThe continue statement skips the rest of the loop statemen",
+    "path": "19-Day-19-break-and-continue"
+  },
+  {
+    "id": "20-Day20-Functions",
+    "day": 20,
+    "title": "Functions",
+    "category": "Intermediate",
+    "code": "def calculateGmean(a, b):\n  mean = (a*b)/(a+b)\n  print(mean)\n\ndef isGreater(a, b):\n  if(a>b):\n    print(\"First number is greater\")\n  else:\n    print(\"Second number is greater or equal\")\n\ndef isLesser(a, b):\n  pass\n  \n\na = 9\nb = 8\nisGreater(a, b)\ncalculateGmean(a, b)\n# gmean1 = (a*b)/(a+b)\n# print(gmean1)\nc = 8\nd = 74\nisGreater(c, d)\ncalculateGmean(c, d)\n# gmean2 = (c*d)/(c+d)\n# print(gmean2)\n",
+    "tutorial": "# Python Functions\nA function is a block of code that performs a specific task whenever it is called. In bigger programs, where we have large amounts of code, it is advisable to create or use existing functions that make the program flow organized and neat.\n\n \n\nThere are two types of functions:\n\n1. Built-in functions\n2. User-defined functions\n \n\n ## Built-in functions:\nThese functions are defined and pre-coded in python. Some examples of built-in functions are as follows:\n\nmin(), max(), len(), s",
+    "path": "20-Day20-Functions"
+  },
+  {
+    "id": "21-Day-21-Function-Arguments",
+    "day": 21,
+    "title": "21 Function Arguments",
+    "category": "Intermediate",
+    "code": "# def average(a, b, c=1):\n#   print(\"The average is \", (a + b + c) / 2)\n\n\ndef average(*numbers):\n  # print(type(numbers))\n  sum = 0\n  for i in numbers:\n    sum = sum + i\n  # print(\"Average is: \", sum / len(numbers))\n  # return 7\n  return sum / len(numbers)\n\n\n# average(4, 6)\n# average(b=9)\n\nc = average(5, 6, 7, 1)\nprint(c)\n\n\n# def name(**name):\n#   # print(type(name))\n#   print(\"Hello,\", name[\"fname\"], name[\"mname\"], name[\"lname\"])\n\n\n# name(mname=\"Buchanan\", lname=\"Barnes\", fname=\"James\")\n",
+    "tutorial": "# Function Arguments and return statement\nThere are four types of arguments that we can provide in a function:\n\n- Default Arguments\n- Keyword Arguments\n- Variable length Arguments\n- Required Arguments\n### Default arguments:\nWe can provide a default value while creating a function. This way the function assumes a default value even if a value is not provided in the function call for that argument.\n\nExample:\n```python\ndef name(fname, mname = \"Jhon\", lname = \"Whatson\"):\n    print(\"Hello,\", fname, m",
+    "path": "21-Day-21-Function-Arguments"
+  },
+  {
+    "id": "22-Day-22-Introduction-to-Lists",
+    "day": 22,
+    "title": "22 Introduction to Lists",
+    "category": "Intermediate",
+    "code": "marks = [3, 5, 6, \"Harry\", True, 6, 7 , 2, 32, 345, 23]\n# print(marks)\n# print(type(marks))\n# print(marks[0])\n# print(marks[1])\n# print(marks[2])\n# print(marks[3])\n# print(marks[4])\n# print(marks[5])\n\n# print(marks[-3]) # Negative index\n# print(marks[len(marks)-3]) # Positive index\n# print(marks[5-3]) # Positive index\n# print(marks[2]) # Positive index\n\n# if \"6\" in marks:\n#   print(\"Yes\")\n# else:\n#   print(\"No\")\n\n# Same thing applies for strings as well!\n# if \"Ha\" in \"Harry\":\n#   print(\"Yes\")\n\n# print(marks[0:7])\n# print(marks[1:9])\n# print(marks[1:9:3])\n\nlst = [i*i for i in range(10)]\nprint(lst)\nlst = [i*i for i in range(10) if i%2==0]\nprint(lst)",
+    "tutorial": "# Python Lists\n- Lists are ordered collection of data items.\n - They store multiple items in a single variable.\n - List items are separated by commas and enclosed within square brackets [].\n - Lists are changeable meaning we can alter them after creation.\n\nExample 1:\n```python\nlst1 = [1,2,2,3,5,4,6]\nlst2 = [\"Red\", \"Green\", \"Blue\"]\nprint(lst1)\nprint(lst2)\n```\nOutput:\n```\n[1, 2, 2, 3, 5, 4, 6]\n['Red', 'Green', 'Blue']\n```\n\nExample 2:\n```python\ndetails = [\"Abhijeet\", 18, \"FYBScIT\", 9.8]\nprint(detai",
+    "path": "22-Day-22-Introduction-to-Lists"
+  },
+  {
+    "id": "23-Day-23-List-Methods",
+    "day": 23,
+    "title": "23 List Methods",
+    "category": "Intermediate",
+    "code": "l = [11, 45, 1, 2, 4, 6, 1, 1]\nprint(l)\n# l.append(7)\n# l.sort(reverse=True)\n# l.reverse()\n# print(l.index(1))\n# print(l.count(1))\n# m = l.copy()\n# m[0] = 0\n# l.insert(1, 899)\nm = [900, 1000, 1100]\nk = l + m\n# print(k)\n# l.extend(m)\nprint(l)",
+    "tutorial": "# List Methods\n## list.sort()\nThis method sorts the list in ascending order. The original list is updated\n### Example 1:\n```python\ncolors = [\"voilet\", \"indigo\", \"blue\", \"green\"]\ncolors.sort()\nprint(colors)\n\nnum = [4,2,5,3,6,1,2,1,2,8,9,7]\nnum.sort()\nprint(num)\n```\n### Output:\n```\n['blue', 'green', 'indigo', 'voilet']\\\n[1, 1, 2, 2, 2, 3, 4, 5, 6, 7, 8, 9]\n \n```\nWhat if you want to print the list in descending order?\\\nWe must give reverse=True as a parameter in the sort method.\n\n### Example:\n```py",
+    "path": "23-Day-23-List-Methods"
+  },
+  {
+    "id": "24-Day24-Introduction-to-Tuples",
+    "day": 24,
+    "title": "Introduction to Tuples",
+    "category": "Intermediate",
+    "code": "tup = (1, 2, 76, 342, 32, \"green\", True)\n# tup[0] = 90\nprint(type(tup), tup)\nprint(len(tup))\nprint(tup[0])\nprint(tup[-1])\nprint(tup[2])\n# print(tup[34])\n\nif  3421 in tup:\n  print(\"Yes 342 is present in this tuple\")\ntup2 = tup[1:4]\nprint(tup2)",
+    "tutorial": "# Python Tuples\nTuples are ordered collection of data items. They store multiple items in a single variable. Tuple items are separated by commas and enclosed within round brackets (). Tuples are unchangeable meaning we can not alter them after creation.\n\n \n\n### Example 1:\n```python\ntuple1 = (1,2,2,3,5,4,6)\ntuple2 = (\"Red\", \"Green\", \"Blue\")\nprint(tuple1)\nprint(tuple2)\n```\n### Output:\n```\n(1, 2, 2, 3, 5, 4, 6)\n('Red', 'Green', 'Blue')\n```\n\n### Example 2:\n```python\ndetails = (\"Abhijeet\", 18, \"FYBSc",
+    "path": "24-Day24-Introduction-to-Tuples"
+  },
+  {
+    "id": "25-Day25-Operations-on-Tuples",
+    "day": 25,
+    "title": "Operations On Tuples",
+    "category": "Intermediate",
+    "code": "tuple1 = (0, 1, 2, 3, 2, 31, 1, 3, 2, 3)\n# res = tuple1.count(3)\n# res = tuple1.index(3)\n# res = tuple1.index(311)\n# res = tuple1.index(3, 4, 8)\nres = len(tuple1)\nprint('Count of 3 in tuple1 is:', res)",
+    "tutorial": "# Manipulating Tuples\nTuples are immutable, hence if you want to add, remove or change tuple items, then first you must convert the tuple to a list. Then perform operation on that list and convert it back to tuple.\n\n#### Example:\n```python\ncountries = (\"Spain\", \"Italy\", \"India\", \"England\", \"Germany\")\ntemp = list(countries)\ntemp.append(\"Russia\")       #add item \ntemp.pop(3)                 #remove item\ntemp[2] = \"Finland\"         #change item\ncountries = tuple(temp)\nprint(countries)\n```\n#### Outp",
+    "path": "25-Day25-Operations-on-Tuples"
+  },
+  {
+    "id": "26-Day-26-Exercise-2-Solution",
+    "day": 26,
+    "title": "26 Exercise 2 Solution",
+    "category": "Exercise",
+    "code": "import time\nt = time.strftime('%H:%M:%S') \nhour = int(time.strftime('%H'))\n# hour = int(input(\"Enter hour: \"))\n# print(hour)\n\nif(hour>=0 and hour<12):\n  print(\"Good Morning Sir!\")\nelif(hour>=12 and hour<17):\n  print(\"Good Afternoon Sir!\")\nelif(hour>=17 and hour<0):\n  print(\"Good Night Sir!\")",
+    "tutorial": "# Excersice 2: Good Morning Sir\nCreate a python program capable of greeting you with Good Morning, Good Afternoon and Good Evening. Your program should use time module to get the current hour. Here is a sample program and documentation link for you:\n```python\nimport time\ntimestamp = time.strftime('%H:%M:%S')\nprint(timestamp)\ntimestamp = time.strftime('%H')\nprint(timestamp)\ntimestamp = time.strftime('%M')\nprint(timestamp)\ntimestamp = time.strftime('%S')\nprint(timestamp)\n# https://docs.python.org/",
+    "path": "26-Day-26-Exercise-2-Solution"
+  },
+  {
+    "id": "27-Day27-Exercise-3",
+    "day": 27,
+    "title": "Exercise 3",
+    "category": "Exercise",
+    "code": "",
+    "tutorial": "Create a program capable of displaying questions to the user like KBC. \nUse List data type to store the questions and their correct answers.\nDisplay the final amount the person is taking home after playing the game.\n## [Next Lesson>>](https://replit.com/@codewithharry/28-Day28-f-strings)\n",
+    "path": "27-Day27-Exercise-3"
+  },
+  {
+    "id": "28-Day28-f-strings",
+    "day": 28,
+    "title": "F Strings",
+    "category": "Intermediate",
+    "code": "letter = \"Hey my name is {1} and I am from {0}\"\ncountry = \"India\"\nname = \"Harry\"\n\nprint(letter.format(country, name))\nprint(f\"Hey my name is {name} and I am from {country}\")\nprint(f\"We use f-strings like this: Hey my name is {{name}} and I am from {{country}}\")\nprice = 49.09999\ntxt = f\"For only {price:.2f} dollars!\"\nprint(txt)\n# print(txt.format())\nprint(type(f\"{2 * 30}\"))\n",
+    "tutorial": "# String formatting in python\nString formatting can be done in python using the format method.\n```python\ntxt = \"For only {price:.2f} dollars!\"\nprint(txt.format(price = 49))\n```\n# f-strings in python\nIt is a new string formatting mechanism introduced by the PEP 498. It is also known as Literal String Interpolation or more commonly as F-strings (f character preceding the string literal). The primary focus of this mechanism is to make the interpolation easier.\n\nWhen we prefix the string with the le",
+    "path": "28-Day28-f-strings"
+  },
+  {
+    "id": "29-Day29-Docstrings",
+    "day": 29,
+    "title": "Docstrings",
+    "category": "Intermediate",
+    "code": "def square(n):\n  '''Takes in a number n, returns the square of n'''\n  print(n**2)\nsquare(5)\nprint(square.__doc__)",
+    "tutorial": "# Docstrings in python\nPython docstrings are the string literals that appear right after the definition of a function, method, class, or module. \n## Example\n```python\ndef square(n):\n    '''Takes in a number n, returns the square of n'''\n    print(n**2)\nsquare(5)\n\n```\nHere, \n\n'''Takes in a number n, returns the square of n''' \nis a docstring which will not appear in output\n\n## Output:\n```\n25\n```\nHere is another example:\n```python\ndef add(num1, num2):\n    \"\"\"\n    Add up two integer numbers.\n\n    T",
+    "path": "29-Day29-Docstrings"
+  },
+  {
+    "id": "30-Day30-Recursion",
+    "day": 30,
+    "title": "Recursion",
+    "category": "Intermediate",
+    "code": "# factorial(7) = 7*6*5*4*3*2*1\n# factorial(6) = 6*5*4*3*2*1\n# factorial(5) = 5*4*3*2*1\n# factorial(4) = 4*3*2*1\n# factorial(0) = 1\n\n\n# factorial(n) = n * factorial(n-1)\ndef factorial(n):\n  if (n == 0 or n == 1):\n    return 1\n  else:\n    return n * factorial(n - 1)\n\n\nprint(factorial(5))\n# 5 * factorial(4)\n# 5 * 4 * factorial(3)\n# 5 * 4 * 3 * factorial(2)\n# 5 * 4 * 3 * 2 * factorial(1)\n# 5 * 4 * 3 * 2 * 1\n\n# Quick Quiz: Write a program to print the Fibonacci sequence\n# f(0) = 0\n# f(1) = 1\n# f(2) = f(1) + f(0)\n# f(n) = f(n-1) + f(n-2)\n\n# 0 1 1 2 3 5 8....",
+    "tutorial": "# Recursion in python\nRecursion is the process of defining something in terms of itself.\n\n## Python Recursive Function\nIn Python, we know that a function can call other functions. It is even possible for the function to call itself. These types of construct are termed as recursive functions.\n## Example:\n```python\ndef factorial(num): \n    if (num == 1 or num == 0):\n        return 1\n    else:\n        return (num * factorial(num - 1)) \n  \n# Driver Code \nnum = 7; \nprint(\"Number: \",num)\nprint(\"Factor",
+    "path": "30-Day30-Recursion"
+  },
+  {
+    "id": "31-Day31-Sets",
+    "day": 31,
+    "title": "Sets",
+    "category": "Intermediate",
+    "code": "s = {2, 4, 2, 6}\nprint(s)\n\ninfo = {\"Carla\", 19, False, 5.9, 19}\nprint(info)\n\nharry = set()\nprint(type(harry))\n\nfor value in info:\n  print(value)",
+    "tutorial": "# Python Sets\nSets are unordered collection of data items. They store multiple items in a single variable. Set items are separated by commas and enclosed within curly brackets {}. Sets are unchangeable, meaning you cannot change items of the set once created. Sets do not contain duplicate items.\n\n\n\n#### Example:\n```python\ninfo = {\"Carla\", 19, False, 5.9, 19}\nprint(info)\n```\n#### Output:\n```\n{False, 19, 5.9, 'Carla'}\n ```\n\nHere we see that the items of set occur in random order and hence they can",
+    "path": "31-Day31-Sets"
+  },
+  {
+    "id": "32-Day32-Set-Methods",
+    "day": 32,
+    "title": "Set Methods",
+    "category": "Intermediate",
+    "code": "info = {\"Carla\", 19, False, 5.9}\nif \"Carla\" in info:\n    print(\"Carla is present.\")\nelse:\n    print(\"Carla is absent.\")",
+    "tutorial": "# Joining Sets\nSets in python more or less work in the same way as sets in mathematics. We can perform operations like union and intersection on the sets just like in mathematics.\n\n \n\n## I. union() and update():\nThe union() and update() methods prints all items that are present in the two sets. The union() method returns a new set whereas update() method adds item into the existing set from another set.\n\n#### Example:\n```python\ncities = {\"Tokyo\", \"Madrid\", \"Berlin\", \"Delhi\"}\ncities2 = {\"Tokyo\", ",
+    "path": "32-Day32-Set-Methods"
+  },
+  {
+    "id": "33-Day-33-Dictionary",
+    "day": 33,
+    "title": "33 Dictionary",
+    "category": "Intermediate",
+    "code": "info = {'name':'Karan', 'age':19, 'eligible':True}\n# print(info) \n# print(info.keys())\n# print(info.values())\n\n# for key in info.keys():\n#   print(f\"The value corresponding to the key {key} is {info[key]}\")\n\nprint(info.items())\nfor key, value in info.items():\n  print(f\"The value corresponding to the key {key} is {value}\") \n  ",
+    "tutorial": "# Python Dictionaries\nDictionaries are ordered collection of data items. They store multiple items in a single variable. Dictionary items are key-value pairs that are separated by commas and enclosed within curly brackets {}.\n\n \n\n#### Example:\n```python\ninfo = {'name':'Karan', 'age':19, 'eligible':True}\nprint(info)\n```\n#### Output:\n```\n{'name': 'Karan', 'age': 19, 'eligible': True}\n```\n## Accessing Dictionary items:\n \n\n### I. Accessing single values:\nValues in a dictionary can be accessed using ",
+    "path": "33-Day-33-Dictionary"
+  },
+  {
+    "id": "34-Day34-Dictionary-Methods",
+    "day": 34,
+    "title": "Dictionary Methods",
+    "category": "Intermediate",
+    "code": "ep1 = {122: 45, 123: 89, 567: 69, 670: 69}\nep2 = {222: 67, 566: 90}\n\n# ep1.update(ep2)\n# ep1.clear()\n# ep1.pop(122)\nep1.popitem()\ndel ep1[122]\nprint(ep1) ",
+    "tutorial": "# Dictionary Methods\nDictionary uses several built-in methods for manipulation.They are listed below\n## update() \nThe update() method updates the value of the key provided to it if the item already exists in the dictionary, else it creates a new key-value pair.\n\n#### Example:\n```python\ninfo = {'name':'Karan', 'age':19, 'eligible':True}\nprint(info)\ninfo.update({'age':20})\ninfo.update({'DOB':2001})\nprint(info)\n```\n#### Output:\n```\n{'name': 'Karan', 'age': 19, 'eligible': True}\n{'name': 'Karan', 'a",
+    "path": "34-Day34-Dictionary-Methods"
+  },
+  {
+    "id": "35-Day-35-For-loop-with-else",
+    "day": 35,
+    "title": "35 For Loop With Else",
+    "category": "Intermediate",
+    "code": "i = 0\nwhile i<7:\n  print(i)\n  i = i + 1\n  # if i == 4:\n  #   break\n\nelse:\n  print(\"Sorry no i\")\n\nfor x in range(5):\n    print (\"iteration no {} in for loop\".format(x+1))\nelse:\n    print (\"else block in loop\")\nprint (\"Out of loop\")",
+    "tutorial": "# Python - else in Loop\nAs you have learned before, the else clause is used along with the if statement.\n\nPython allows the else keyword to be used with the for and while loops too. The else block appears after the body of the loop. The statements in the else block will be executed after all iterations are completed. The program exits the loop only after the else block is executed.\n## Syntax\n```\nfor counter in sequence:\n    #Statements inside for loop block\nelse:\n    #Statements inside else bloc",
+    "path": "35-Day-35-For-loop-with-else"
+  },
+  {
+    "id": "36-Day36-Exception-Handling",
+    "day": 36,
+    "title": "Exception Handling",
+    "category": "Intermediate",
+    "code": "# a = input(\"Enter the number: \")\n# print(f\"Multiplication table of {a} is: \")\n# try:\n#   for i in range(1, 11):\n#     print(f\"{int(a)} X {i} = {int(a)*i}\")\n# except:\n#   print(\"Invalid  Input!\")\n\n# print(\"Some imp lines of code\")\n# print(\"End of program\")\n\ntry:\n    num = int(input(\"Enter an integer: \"))\n    a = [6, 3]\n    print(a[num])\nexcept ValueError:\n    print(\"Number entered is not an integer.\")\n    \nexcept IndexError:\n  print(\"Index Error\")",
+    "tutorial": "# Exception Handling\nException handling is the process of responding to unwanted or unexpected events when a computer program runs. Exception handling deals with these events to avoid the program or system crashing, and without this process, exceptions would disrupt the normal operation of a program.\n# Exceptions in Python\nPython has many built-in exceptions that are raised when your program encounters an error (something in the program goes wrong).\n\nWhen these exceptions occur, the Python inter",
+    "path": "36-Day36-Exception-Handling"
+  },
+  {
+    "id": "37-Day37-Finally-keyword",
+    "day": 37,
+    "title": "Finally Keyword",
+    "category": "Intermediate",
+    "code": "def func1():\n  try:\n    l = [1, 5, 6, 7]\n    i = int(input(\"Enter the index: \"))\n    print(l[i])\n    return 1\n  except:\n    print(\"Some error occurred\")\n    return 0\n\n  finally:\n    print(\"I am always executed\")\n  # print(\"I am always executed\")\n\n\nx = func1()\nprint(x)\n",
+    "tutorial": "# Finally Clause\nThe finally code block is also a part of exception handling. When we handle exception using the try and except block, we can include a finally block at the end. The finally block is always executed, so it is generally used for doing the concluding tasks like closing file resources or closing database connection or may be ending the program execution with a delightful message.\n# Syntax:\n```\ntry:\n   #statements which could generate \n   #exception\nexcept:\n   #solution of generated ",
+    "path": "37-Day37-Finally-keyword"
+  },
+  {
+    "id": "38-Day38-Custom-Errors",
+    "day": 38,
+    "title": "Custom Errors",
+    "category": "Intermediate",
+    "code": "a = int(input(\"Enter any value between 5 and 9\"))\n\nif(a<5  or a>9):\n  raise  ValueError(\"Value should be between 5 and 9\")\n ",
+    "tutorial": "## Raising Custom errors \nIn python, we can raise custom errors by using the `raise`  keyword. \n```python\nsalary = int(input(\"Enter salary amount: \"))\nif not 2000 < salary < 5000:\n    raise ValueError(\"Not a valid salary\")\n```\n\nIn the previous tutorial, we learned about different built-in exceptions in Python and why it is important to handle exceptions. However, sometimes we may need to create our own custom exceptions that serve our purpose.\n\n## Defining Custom Exceptions\nIn Python, we can def",
+    "path": "38-Day38-Custom-Errors"
+  },
+  {
+    "id": "39-Day39-Exercise-3-Solution",
+    "day": 39,
+    "title": "Exercise 3 Solution",
+    "category": "Exercise",
+    "code": "questions = [\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language ",
+    "tutorial": "Create a program capable of displaying questions to the user like KBC. \nUse List data type to store the questions and their correct answers.\nDisplay the final amount the person is taking home after playing the game.\n\n## [Next Lesson>>](https://replit.com/@codewithharry/40-Day40-Exercise-4)\n",
+    "path": "39-Day39-Exercise-3-Solution"
+  },
+  {
+    "id": "39-Day39-Exercise-3-Solution (1)",
+    "day": 39,
+    "title": "Exercise 3 Solution (1)",
+    "category": "Exercise",
+    "code": "questions = [\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language was used to create fb?\", \"Python\", \"French\", \"JavaScript\",\n    \"Php\", \"None\", 4\n  ],\n  [\n    \"Which language ",
+    "tutorial": "Create a program capable of displaying questions to the user like KBC. \nUse List data type to store the questions and their correct answers.\nDisplay the final amount the person is taking home after playing the game.\n\n## [Next Lesson>>](https://replit.com/@codewithharry/40-Day40-Exercise-4)\n",
+    "path": "39-Day39-Exercise-3-Solution (1)"
+  },
+  {
+    "id": "40-Day40-Exercise-4",
+    "day": 40,
+    "title": "Exercise 4",
+    "category": "Exercise",
+    "code": "# Write a python program to translate a message into secret code language. Use the rules below to translate normal English into secret code language\n\n# Coding:\n# if the word contains atleast 3 characters, remove the first letter and append it at the end\n#   now append three random characters at the starting and the end\n# else:\n#   simply reverse the string\n\n# Decoding:\n# if the word contains less than 3 characters, reverse it\n# else:\n#   remove 3 random characters from start and end. Now remove the last letter and append it to the beginning\n\n# Your program should ask whether you want to code or decode\n",
+    "tutorial": "# Write a python program to translate a message into secret code language. Use the rules below to translate normal English into secret code language\n\n# Coding:\nif the word contains atleast 3 characters, remove the first letter and append it at the end\nnow append three random characters at the starting and the end\nelse:\nsimply reverse the string\n\n## Decoding:\nif the word contains less than 3 characters, reverse it\nelse:\nremove 3 random characters from start and end. Now remove the last letter and",
+    "path": "40-Day40-Exercise-4"
+  },
+  {
+    "id": "41-Day41-Short-Hand-if-else",
+    "day": 41,
+    "title": "Short Hand If Else",
+    "category": "Advanced",
+    "code": "a = 330000\nb = 3303\nprint(\"A\") if a > b else print(\"=\") if a == b else print(\"B\")\n\nc = 9 if a>b else 0\nprint(c)",
+    "tutorial": "## If ... Else in One Line\nThere is also a shorthand syntax for the if-else statement that can be used when the condition being tested is simple and the code blocks to be executed are short. Here's an example:\n```python\na = 2\nb = 330\nprint(\"A\") if a > b else print(\"B\")\n```\n\nYou can also have multiple else statements on the same line:\n\n## Example\nOne line if else statement, with 3 conditions:\n```python\na = 330\nb = 330\nprint(\"A\") if a > b else print(\"=\") if a == b else print(\"B\")\n```\n\n## Another E",
+    "path": "41-Day41-Short-Hand-if-else"
+  },
+  {
+    "id": "42-Day-42-Enumerate",
+    "day": 42,
+    "title": "42 Enumerate",
+    "category": "Advanced",
+    "code": "marks = [12, 56, 32, 98, 12,  45, 1, 4]\n\n# index = 0\n# for mark in marks:\n#   print(mark)\n#   if(index == 3):\n#     print(\"Harry, awesome!\")\n#   index +=1\n\nfor index, mark in enumerate(marks, start=1):\n  print(mark)\n  if(index == 3):\n    print(\"Harry, awesome!\")",
+    "tutorial": "# Enumerate function in python\nThe enumerate function is a built-in function in Python that allows you to loop over a sequence (such as a list, tuple, or string) and get the index and value of each element in the sequence at the same time. Here's a basic example of how it works:\n```python\n# Loop over a list and print the index and value of each element\nfruits = ['apple', 'banana', 'mango']\nfor index, fruit in enumerate(fruits):\n    print(index, fruit)\n\n```\n\nThe output of this code will be:\n\n```p",
+    "path": "42-Day-42-Enumerate"
+  },
+  {
+    "id": "44-Day44-How-import-works",
+    "day": 44,
+    "title": "How Import Works",
+    "category": "Advanced",
+    "code": "# from math import sqrt, pi\n# from math import pi, sqrt as s\n# import math as math_builtin_python\n\n# result = math_builtin_python.sqrt(9) * math_builtin_python.pi\n# print(result)  # Output: 3.0\n\n# from harry import welcome, harry\nimport harry as hr\nimport math\n\nprint(dir(math))\nprint(math.nan, type(math.nan))\nhr.welcome()\nprint(hr.harry)",
+    "tutorial": "## How importing in python works\nImporting in Python is the process of loading code from a Python module into the current script. This allows you to use the functions and variables defined in the module in your current script, as well as any additional modules that the imported module may depend on.\n\nTo import a module in Python, you use the import statement followed by the name of the module. For example, to import the math module, which contains a variety of mathematical functions, you would u",
+    "path": "44-Day44-How-import-works"
+  },
+  {
+    "id": "45-Day45-if-name-main-in-Python",
+    "day": 45,
+    "title": "If Name Main in Python",
+    "category": "Advanced",
+    "code": "import harry\n\nharry.welcome()",
+    "tutorial": "## `if \"__name__ == \"__main__\"` in Python\nThe if `__name__ == \"__main__\"` idiom is a common pattern used in Python scripts to determine whether the script is being run directly or being imported as a module into another script.\n\nIn Python, the `__name__` variable is a built-in variable that is automatically set to the name of the current module. When a Python script is run directly, the `__name__` variable is set to the string `__main__` When the script is imported as a module into another scrip",
+    "path": "45-Day45-if-name-main-in-Python"
+  },
+  {
+    "id": "46-Day-46-os-Module",
+    "day": 46,
+    "title": "46 Os Module",
+    "category": "Advanced",
+    "code": "import os\n\nif(not os.path.exists(\"data\")):\n    os.mkdir(\"data\")\n\nfor i in range(0, 100):\n    os.mkdir(f\"data/Day{i+1}\")\n    \n",
+    "tutorial": "# os Module in Python\nThe os module in Python is a built-in library that provides functions for interacting with the operating system. It allows you to perform a wide variety of tasks, such as reading and writing files, interacting with the file system, and running system commands.\n\nHere are some common tasks you can perform with the os module:\n\nReading and writing files\nThe os module provides functions for opening, reading, and writing files. For example, to open a file for reading, you can use",
+    "path": "46-Day-46-os-Module"
+  },
+  {
+    "id": "47-Day47-Exercise-4-Solution",
+    "day": 47,
+    "title": "Exercise 4 Solution",
+    "category": "Exercise",
+    "code": "# Write a python program to translate a message into secret code language. Use the rules below to translate normal English into secret code language\n\n# Coding:\n# if the word contains atleast 3 characters, remove the first letter and append it at the end\n#   now append three random characters at the starting and the end\n# else:\n#   simply reverse the string\n\n# Decoding:\n# if the word contains less than 3 characters, reverse it\n# else:\n#   remove 3 random characters from start and end. Now remove the last letter and append it to the beginning\n# Your program should ask whether you want to code or decode\n\nst = input(\"Enter message\")\nwords = st.split(\" \")\ncoding = input(\"1 for Coding or 0 for Decoding\")\ncoding = True if (coding==\"1\") else False\nprint(coding)\nif(coding):\n  nwords = []\n  for word in words:\n    if(len(word)>=3):\n      r1 = \"dsf\"\n      r2 = \"jkr\"\n      stnew = r1+ word[1:] + word[0] + r2\n      nwords.append(stnew)\n    else:\n      nwords.append(word[::-1])\n  print(\" \".join(nwords))\n\nelse:\n  nwords = []\n  for word in words:\n    if(len(word)>=3): \n      stnew = word[3:-3]\n      stnew = stnew[-1] + stnew[:-1]\n      nwords.append(stnew)\n    else:\n      nwords.append(word[::-1])\n  print(\" \".join(nwords))\n  \n  ",
+    "tutorial": "# Write a python program to translate a message into secret code language. Use the rules below to translate normal English into secret code language\n\n# Coding:\nif the word contains atleast 3 characters, remove the first letter and append it at the end\nnow append three random characters at the starting and the end\nelse:\nsimply reverse the string\n\n# Decoding:\nif the word contains less than 3 characters, reverse it\nelse:\nremove 3 random characters from start and end. Now remove the last letter and ",
+    "path": "47-Day47-Exercise-4-Solution"
+  },
+  {
+    "id": "48-Day48-local-vs-global-variables",
+    "day": 48,
+    "title": "Local vs Global Variables",
+    "category": "Advanced",
+    "code": "x = 10  # global variable\n\n\ndef my_function():\n  global x\n  x = 5  # this will change the value of the global variable x\n  y = 5  # local variable\n\n\nmy_function()\nprint(x)  # prints 5\n# print(y) # this will cause an error because y is a local variable and is not accessible outside of the function",
+    "tutorial": "# local and global variables\nBefore we dive into the differences between local and global variables, let's first recall what a variable is in Python.\n\nA variable is a named location in memory that stores a value. In Python, we can assign values to variables using the assignment operator =. For example:\n```python \nx = 5\ny = \"Hello, World!\"\n\n```\n\nNow, let's talk about local and global variables.\n\nA local variable is a variable that is defined within a function and is only accessible within that fu",
+    "path": "48-Day48-local-vs-global-variables"
+  },
+  {
+    "id": "49-Day49-File-IO",
+    "day": 49,
+    "title": "File Io",
+    "category": "Advanced",
+    "code": "# READING A FILE\n\n# f = open('myfile.txt', 'r')\n# # print(f)\n# text = f.read()\n# print(text)\n# f.close()\n\n# WRITING A FILE\n\nf = open('myfile.txt', 'a')\nf.write('Hello, world!')\nf.close()\n\nwith open('myfile.txt', 'a') as f:\n  f.write(\"Hey I am inside with\")",
+    "tutorial": "Python provides several ways to manipulate files. Today, we will discuss how to handle files in Python.\n## Opening a File\nBefore we can perform any operations on a file, we must first open it. Python provides the open() function to open a file. It takes two arguments: the name of the file and the mode in which the file should be opened. The mode can be 'r' for reading, 'w' for writing, or 'a' for appending.\n\nHere's an example of how to open a file for reading:\n```python\nf = open('myfile.txt', 'r",
+    "path": "49-Day49-File-IO"
+  },
+  {
+    "id": "50-Day50-read-readlines-and-other-methods",
+    "day": 50,
+    "title": "Read Readlines and Other Methods",
+    "category": "Advanced",
+    "code": "# f = open('myfile.txt', 'r')\n# i = 0\n# while True:\n#   i = i + 1\n#   line = f.readline()\n#   if not line:\n#     break\n#   m1 = int(line.split(\",\")[0])\n#   m2 = int(line.split(\",\")[1])\n#   m3 = int(line.split(\",\")[2])\n#   print(f\"Marks of student {i} in Maths is: {m1*2}\")\n#   print(f\"Marks of student {i} in English is: {m2*2}\")\n#   print(f\"Marks of student {i} in SST is: {m3*2}\")\n\n#   print(line)\n\nf = open('myfile2.txt', 'w')\nlines = ['line 1\\n', 'line 2\\n', 'line 3\\n']\nf.writelines(lines)\nf.close()",
+    "tutorial": "# readlines() method\nThe readline() method reads a single line from the file. If we want to read multiple lines, we can use a loop.\n\n```python\nf = open('myfile.txt', 'r')\nwhile True:\n    line = f.readline()\n    if not line:\n        break\n    print(line)\n\n```\nThe readlines() method reads all the lines of the file and returns them as a list of strings.\n\n# writelines() method\nThe writelines() method in Python writes a sequence of strings to a file. The sequence can be any iterable object, such as a",
+    "path": "50-Day50-read-readlines-and-other-methods"
+  },
+  {
+    "id": "51-Day51-seek-and-tell-functions",
+    "day": 51,
+    "title": "Seek and Tell Functions",
+    "category": "Advanced",
+    "code": "with open('sample.txt', 'w') as f:\n  f.write('Hello World3!')\n  f.truncate(3)\n\nwith open('sample.txt', 'r') as f:\n  print(f.read())",
+    "tutorial": "# seek() and tell() functions\nIn Python, the seek() and tell() functions are used to work with file objects and their positions within a file. These functions are part of the built-in io module, which provides a consistent interface for reading and writing to various file-like objects, such as files, pipes, and in-memory buffers.\n## seek() function\nThe seek() function allows you to move the current position within a file to a specific point. The position is specified in bytes, and you can move e",
+    "path": "51-Day51-seek-and-tell-functions"
+  },
+  {
+    "id": "52-Day52-Lambda-Functions",
+    "day": 52,
+    "title": "Lambda Functions",
+    "category": "Advanced",
+    "code": "# def double(x):\n#   return x*2\n\ndef appl(fx, value):\n  return 6 + fx(value)\n\ndouble = lambda x: x * 2\ncube = lambda x: x * x * x\navg = lambda x, y, z: (x + y + z) / 3\n\nprint(double(5))\nprint(cube(5))\nprint(avg(3, 5, 10))\nprint(appl(lambda x: x * x , 2))",
+    "tutorial": "# Lambda Functions in Python\nIn Python, a lambda function is a small anonymous function without a name. It is defined using the lambda keyword and has the following syntax:\n\n```python\nlambda arguments: expression\n```\nLambda functions are often used in situations where a small function is required for a short period of time. They are commonly used as arguments to higher-order functions, such as map, filter, and reduce.\n\nHere is an example of how to use a lambda function:\n\n```python\n# Function to ",
+    "path": "52-Day52-Lambda-Functions"
+  },
+  {
+    "id": "53-Day53-Map-Filter-and-Reduce",
+    "day": 53,
+    "title": "Map Filter and Reduce",
+    "category": "Advanced",
+    "code": "# # MAP \n# # def cube(x):\n# #   return x * x * x\n\n\n# # print(cube(2))\n\n# l = [1, 2, 4, 6, 4, 3]\n# # newl = []\n# # for item in l:\n# #   newl.append(cube(item))\n\n# newl = list(map(lambda x: x*x*x, l))\n# print(newl)\n\n# # FILTER\n# def filter_function(a):\n#   return a>2\n  \n# newnewl = list(filter(filter_function, l))\n# print(newnewl)\n\nfrom functools import reduce\n\n# List of numbers\nnumbers = [1, 2, 3, 4, 5] \n\n# Calculate the sum of the numbers using the reduce function\ndef mysum(x, y):\n  return x + y\n  \nsum = reduce(mysum, numbers)\n\n# Print the sum\nprint(sum)",
+    "tutorial": "# Map, Filter and Reduce\nIn Python, the map, filter, and reduce functions are built-in functions that allow you to apply a function to a sequence of elements and return a new sequence. These functions are known as higher-order functions, as they take other functions as arguments.\n\n## map\nThe map function applies a function to each element in a sequence and returns a new sequence containing the transformed elements. The map function has the following syntax:\n\n```python\nmap(function, iterable)\n```",
+    "path": "53-Day53-Map-Filter-and-Reduce"
+  },
+  {
+    "id": "54-Day54-is-vs-in-Python",
+    "day": 54,
+    "title": "Is vs in Python",
+    "category": "Advanced",
+    "code": "a = None\nb = None\n\nprint(a is b) # exact location of object in memory\nprint(a is None) # exact location of object in memory\nprint(a == b) # value",
+    "tutorial": "# 'is' vs '==' in Python\nIn Python, is and == are both comparison operators that can be used to check if two values are equal. However, there are some important differences between the two that you should be aware of.\n\nThe is operator compares the identity of two objects, while the == operator compares the values of the objects. This means that is will only return True if the objects being compared are the exact same object in memory, while == will return True if the objects have the same value.",
+    "path": "54-Day54-is-vs-in-Python"
+  },
+  {
+    "id": "55-Day55-Exercise-5",
+    "day": 55,
+    "title": "Exercise 5",
+    "category": "Exercise",
+    "code": "#                 S W G\n# computer =      0 1 2\n# player =  S  0  D W L\n#           W  1  L D W\n#           G  2  W L D",
+    "tutorial": "# Snake Water Gun\nSnake, Water and Gun is a variation of the children's game \"rock-paper-scissors\" where players use hand gestures to represent a snake, water, or a gun. The gun beats the snake, the water beats the gun, and the snake beats the water.\nWrite a python program to create a Snake Water Gun game in Python using if-else statements. Do not create any fancy GUI. Use proper functions to check for win.\n\n## [Next Lesson>>](https://replit.com/@codewithharry/56-Day56-Intro-to-oops)\n\n",
+    "path": "55-Day55-Exercise-5"
+  },
+  {
+    "id": "56-Day56-Intro-to-oops",
+    "day": 56,
+    "title": "Intro to Oops",
+    "category": "Advanced",
+    "code": "def hello():\n  print(\"hello\")\n\nhello()\nsales1 = 6000\nprofit1 = 2000\nad1 = 1000\n# rajeev.sales\n\nsales2 = 6000\nprofit2 = 2000\nad2 = 1000 \n# vikrant.sales\n\nsales3 = 6000\nprofit3 = 2000\nad3 = 1000\n \nRailwayForm   ---> Class [blueprint]\nharry --> harry ki info wala form --> Object [entity]\ntom --> tom ki info wala form --> Object [entity]\nshubham -- shubham ki info wala form --> Object [entity]\n# shubham.changeName(\"Shubhi\")\n",
+    "tutorial": "# Introduction to Object-oriented programming\nIntroduction to Object-Oriented Programming in Python: In programming languages, mainly there are two approaches that are used to write program or code.\n- 1). Procedural Programming\n- 2). Object-Oriented Programming\n\nThe procedure we are following till now is the \u201cProcedural Programming\u201d approach. So, in this session, we will learn about Object Oriented Programming (OOP).\nThe basic idea of object-oriented programming (OOP) in Python is to use classes",
+    "path": "56-Day56-Intro-to-oops"
+  },
+  {
+    "id": "57-Day57-Classes-and-Objects",
+    "day": 57,
+    "title": "Classes and Objects",
+    "category": "Advanced",
+    "code": "class Person:\n  name = \"Harry\"\n  occupation = \"Software Developer\"\n  networth = 10\n  def info(self):\n    print(f\"{self.name} is a {self.occupation}\")\n\n\na = Person()\nb = Person()\nc = Person()\n\na.name = \"Shubham\"\na.occupation = \"Accountant\"\n\nb.name = \"Nitika\"\nb.occupation = \"HR\"\n\n# print(a.name, a.occupation)\na.info()\nb.info()\nc.info()\n",
+    "tutorial": "# Python Class and Objects\nA class is a blueprint or a template for creating objects, providing initial values for state (member variables or attributes), and implementations of behavior (member functions or methods). The user-defined objects are created using the class keyword.\n \n\n## Creating a Class:\nLet us now create a class using the class keyword.\n \n```python\nclass Details:\n    name = \"Rohan\"\n    age = 20\n ```\n\n## Creating an Object:\nObject is the instance of the class used to access the pr",
+    "path": "57-Day57-Classes-and-Objects"
+  },
+  {
+    "id": "58-Day58-Constructors",
+    "day": 58,
+    "title": "Constructors",
+    "category": "Advanced",
+    "code": "class Person:\n\n  def __init__(self, name, occ):\n    print(\"Hey I am a person\")\n    self.name = name\n    self.occ = occ\n\n  def info(self):\n    print(f\"{self.name} is a {self.occ}\")\n\n\na = Person(\"Harry\", \"Developer\")\nb = Person(\"Divya\", \"HR\") \na.info()\nb.info()\n# print(a.name)\n# a.name = \"Divya\"\n# a.occ = \"HR\"\n# a.info()\n",
+    "tutorial": "# Constructors\nA constructor is a special method in a class used to create and initialize an object of a class. There are different types of constructors. Constructor is invoked automatically when an object of a class is created.\n\nA constructor is a unique function that gets called automatically when an object is created of a class. \nThe main purpose of a constructor is to initialize or assign values to the data members of that class. It cannot return any value other than None.\n## Syntax of Pyth",
+    "path": "58-Day58-Constructors"
+  },
+  {
+    "id": "59-Day-59-Decorators-in-Python",
+    "day": 59,
+    "title": "59 Decorators in Python",
+    "category": "Advanced",
+    "code": "\ndef greet(fx):\n  def mfx(*args, **kwargs):\n    print(\"Good Morning\")\n    fx(*args, **kwargs)\n    print(\"Thanks for using this function\")\n  return mfx\n\n@greet\ndef hello():\n  print(\"Hello world\")\n\n@greet\ndef add(a, b):\n  print(a+b)\n  \n# greet(hello)()\nhello()\n# greet(add)(1, 2)\nadd(1, 2)\n",
+    "tutorial": "# Python Decorators\nPython decorators are a powerful and versatile tool that allow you to modify the behavior of functions and methods. They are a way to extend the functionality of a function or method without modifying its source code.\n\nA decorator is a function that takes another function as an argument and returns a new function that modifies the behavior of the original function. The new function is often referred to as a \"decorated\" function. The basic syntax for using a decorator is the f",
+    "path": "59-Day-59-Decorators-in-Python"
+  },
+  {
+    "id": "60-Day-60-Getters-and-Setters",
+    "day": 60,
+    "title": "60 Getters and Setters",
+    "category": "Advanced",
+    "code": "class MyClass:\n  def __init__(self, value):\n      self._value = value\n    \n  def show(self):\n    print(f\"Value is {self._value}\")\n    \n  @property\n  def ten_value(self):\n      return 10* self._value\n    \n  @ten_value.setter\n  def ten_value(self, new_value):\n      self._value = new_value/10\n\nobj = MyClass(10)\nobj.ten_value = 67\nprint(obj.ten_value)\nobj.show()",
+    "tutorial": "# Getters\nGetters in Python are methods that are used to access the values of an object's properties. They are used to return the value of a specific property, and are typically defined using the @property decorator.\nHere is an example of a simple class with a getter method:\n```python\nclass MyClass:\n    def __init__(self, value):\n        self._value = value\n\n    @property\n    def value(self):\n        return self._value\n```\nIn this example, the MyClass class has a single property, _value, which i",
+    "path": "60-Day-60-Getters-and-Setters"
+  },
+  {
+    "id": "61-Day-61-Inheritance-in-Python",
+    "day": 61,
+    "title": "61 Inheritance in Python",
+    "category": "Advanced",
+    "code": "class Employee:\n  def __init__(self, name, id):\n    self.name = name\n    self.id = id \n\n  def showDetails(self):\n    print(f\"The name of Employee: {self.id} is {self.name}\")\n\nclass Programmer(Employee):\n  def showLanguage(self):\n    print(\"The default langauge is Python\")\n\n\ne1 = Employee(\"Rohan Das\", 400)\ne1.showDetails()\ne2 = Programmer(\"Harry\", 4100)\ne2.showDetails()\ne2.showLanguage()",
+    "tutorial": "# Inheritance in python\nWhen a class derives from another class. The child class will inherit all the public and protected properties and methods from the parent class. In addition, it can have its own properties and methods,this is called as inheritance.\n## Python Inheritance Syntax\n```python\nclass BaseClass:\n  Body of base class\nclass DerivedClass(BaseClass):\n  Body of derived class\n  ```\nDerived class inherits features from the base class where new features can be added to it. This results in",
+    "path": "61-Day-61-Inheritance-in-Python"
+  },
+  {
+    "id": "62-Day-62-Access-Specifiers",
+    "day": 62,
+    "title": "62 Access Specifiers",
+    "category": "Advanced",
+    "code": "class Student:\n    def __init__(self):\n        self._name = \"Harry\"\n\n    def _funName(self):      # protected method\n        return \"CodeWithHarry\"\n\nclass Subject(Student):       #inherited class\n    pass\n\nobj = Student()\nobj1 = Subject()\nprint(dir(obj))\n\n# calling by object of Student class\nprint(obj._name)      \nprint(obj._funName())     \n# calling by object of Subject class\nprint(obj1._name)    \nprint(obj1._funName())",
+    "tutorial": "# Access Specifiers/Modifiers\nAccess specifiers or access modifiers in python programming are used to limit the access of class variables and class methods outside of class while implementing the concepts of inheritance.\n\nLet us see the each one of access specifiers in detail:\n# Types of access specifiers \n1.  Public access modifier\n2. Private access modifier\n3. Protected access modifier\n   \n# Public Access Specifier in Python\nAll the variables and methods (member functions) in python are by def",
+    "path": "62-Day-62-Access-Specifiers"
+  },
+  {
+    "id": "63-Day-63-Exercise-5-Solution",
+    "day": 63,
+    "title": "63 Exercise 5 Solution",
+    "category": "Exercise",
+    "code": "import random\n\ndef check(comp, user):\n  if comp ==user:\n    return 0\n    \n  if(comp == 0 and user ==1):\n    return -1\n    \n  if(comp == 1 and user ==2):\n    return -1\n    \n  if(comp == 2 and user == 0):\n    return -1\n\n  return 1\n    \n  \ncomp = random.randint(0, 2)\nuser = int(input(\"0 for Snake, 1 for water and 2 for Gun:\\n\"))\n\nscore = check(comp, user)\n\nprint(\"You: \", user)\nprint(\"Computer: \", comp)\n\nif(score == 0):\n  print(\"Its a draw\")\nelif (score == -1):\n  print(\"You Lose\")\nelse:\n  print(\"You Won\")\n  \n\n\n\n",
+    "tutorial": "## Snake Water Gun\nSnake, Water and Gun is a variation of the children's game \"rock-paper-scissors\" where players use hand gestures to represent a snake, water, or a gun. The gun beats the snake, the water beats the gun, and the snake beats the water. Write a python program to create a Snake Water Gun game in Python using if-else statements. Do not create any fancy GUI. Use proper functions to check for win.\n## [Next Lesson>>](https://replit.com/@codewithharry/64-Day-64-Exercise-6)\n",
+    "path": "63-Day-63-Exercise-5-Solution"
+  },
+  {
+    "id": "64-Day-64-Exercise-6",
+    "day": 64,
+    "title": "64 Exercise 6",
+    "category": "Exercise",
+    "code": "",
+    "tutorial": "Write a Library class with no_of_books and books as two instance variables. Write a program to create a library from this Library class and show how  you can print all books, add a book and get the number of books using  different methods. Show that your program doesnt persist the books after the program is stopped!\n## [Next Lesson>>](https://replit.com/@codewithharry/65-Day-65-Static-Methods)\n",
+    "path": "64-Day-64-Exercise-6"
+  },
+  {
+    "id": "65-Day-65-Static-Methods",
+    "day": 65,
+    "title": "65 Static Methods",
+    "category": "Advanced",
+    "code": "class Math:\n  def __init__(self, num):\n    self.num = num\n\n  def addtonum(self, n):\n    self.num = self.num +n\n    \n  @staticmethod\n  def add(a, b):\n      return a + b\n\n# result = Math.add(1, 2)\n# print(result) # Output: 3\na = Math(5)\nprint(a.num)\na.addtonum(6)\nprint(a.num)\n\nprint(Math.add(7, 2)) ",
+    "tutorial": "Static methods in Python are methods that belong to a class rather than an instance of the class. They are defined using the @staticmethod decorator and do not have access to the instance of the class (i.e. self). They are called on the class itself, not on an instance of the class. Static methods are often used to create utility functions that don't need access to instance data.\n\n```python\nclass Math:\n    @staticmethod\n    def add(a, b):\n        return a + b\n\nresult = Math.add(1, 2)\nprint(resul",
+    "path": "65-Day-65-Static-Methods"
+  },
+  {
+    "id": "66-Day-66-Instance-vs-Class-variables",
+    "day": 66,
+    "title": "66 Instance vs Class Variables",
+    "category": "Advanced",
+    "code": "class Employee:\n  companyName = \"Apple\"\n  noOfEmployees = 0\n  def __init__(self, name):\n    self.name = name\n    self.raise_amount = 0.02\n    Employee.noOfEmployees +=1\n  def showDetails(self):\n    print(f\"The name of the Employee is {self.name} and the raise amount in {self.noOfEmployees} sized {self.companyName} is {self.raise_amount}\")\n\n# Employee.showDetails(emp1)\nemp1 = Employee(\"Harry\")\nemp1.raise_amount = 0.3\nemp1.companyName = \"Apple India\" \nemp1.showDetails()\nEmployee.companyName = \"Google\"\nprint(Employee.companyName)\n\nemp2 = Employee(\"Rohan\")\nemp2.companyName = \"Nestle\"\nemp2.showDetails()\n",
+    "tutorial": "# Instance vs class variables\nIn Python, variables can be defined at the class level or at the instance level. Understanding the difference between these types of variables is crucial for writing efficient and maintainable code.\n\n## Class Variables\nClass variables are defined at the class level and are shared among all instances of the class. They are defined outside of any method and are usually used to store information that is common to all instances of the class. For example, a class variabl",
+    "path": "66-Day-66-Instance-vs-Class-variables"
+  },
+  {
+    "id": "67-Day-67-Exercise-6-Solution",
+    "day": 67,
+    "title": "67 Exercise 6 Solution",
+    "category": "Exercise",
+    "code": "class Library:\n  def __init__(self):\n    self.noBooks = 0\n    self.books = []\n    \n  def addBook(self, book):\n    self.books.append(book)\n    self.noBooks = len(self.books)\n\n  def showInfo(self):\n    print(f\"The library has {self.noBooks} books. The books are\")\n    for book in self.books:\n      print(book)\n\n\nl1 = Library()\nl1.addBook(\"Harry Potter1\")\nl1.addBook(\"Harry Potter2\")\nl1.addBook(\"Harry Potter3\")\nl1.showInfo()\n    \n  ",
+    "tutorial": "Write a Library class with no_of_books and books as two instance variables. Write a program to create a library from this Library class and show how you can print all books, add a book and get the number of books using different methods. Show that your program doesnt persist the books after the program is stopped!\n## [Next Lesson>>](https://replit.com/@codewithharry/68-Day-68-Exercise-7)\n\n",
+    "path": "67-Day-67-Exercise-6-Solution"
+  },
+  {
+    "id": "68-Day-68-Exercise-7",
+    "day": 68,
+    "title": "68 Exercise 7",
+    "category": "Exercise",
+    "code": "",
+    "tutorial": "Write a program to clear the clutter inside a folder on your computer. \nYou should use os module to rename all the png images from 1.png all the way till n.png where n is the number of png files in that folder. Do the same for other file formats. For example:\n- sfdsf.png --> 1.png\n- vfsf.png --> 2.png\n- this.png --> 3.png\n- design.png --> 4.png\n- name.png --> 5.png\n## [Next Lesson>>](https://replit.com/@codewithharry/69-Day-69-Class-Methods)\n",
+    "path": "68-Day-68-Exercise-7"
+  },
+  {
+    "id": "69-Day-69-Class-Methods",
+    "day": 69,
+    "title": "69 Class Methods",
+    "category": "Advanced",
+    "code": "class Employee:\n  company = \"Apple\"\n  def show(self):\n    print(f\"The name is {self.name} and company is {self.company}\")\n\n  @classmethod\n  def changeCompany(cls, newCompany):\n    cls.company = newCompany\n\n\ne1 = Employee()\ne1.name = \"Harry\"\ne1.show()\ne1.changeCompany(\"Tesla\")\ne1.show()\nprint(Employee.company)",
+    "tutorial": "# Python Class Methods\n## Python Class Methods: An Introduction\n\nIn Python, classes are a way to define custom data types that can store data and define functions that can manipulate that data. One type of function that can be defined within a class is called a \"method.\" In this blog post, we will explore what Python class methods are, why they are useful, and how to use them.\n\n## What are Python Class Methods?\n\nA class method is a type of method that is bound to the class and not the instance o",
+    "path": "69-Day-69-Class-Methods"
+  },
+  {
+    "id": "70-Day-70-Class-methods-as-alternative-constructors",
+    "day": 70,
+    "title": "70 Class Methods As Alternative Constructors",
+    "category": "Advanced",
+    "code": "class Employee:\n  def __init__(self, name, salary):\n    self.name = name \n    self.salary = salary\n    \n  @classmethod\n  def fromStr(cls, string):\n    return cls(string.split(\"-\")[0], int(string.split(\"-\")[1]))\n    \ne1 = Employee(\"Harry\", 12000)\nprint(e1.name)\nprint(e1.salary)\n\nstring = \"John-12000\"\ne2 = Employee.fromStr(string)\nprint(e2.name)\nprint(e2.salary)\n\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    @classmethod\n    def from_string(cls, string):\n        name, age = string.split(',')\n        return cls(name, int(age))\n\nperson = Person.from_string(\"John Doe, 30\")\nprint(person.name, person.age)",
+    "tutorial": "# Class Methods as Alternative Constructors\n\nIn object-oriented programming, the term \"constructor\" refers to a special type of method that is automatically executed when an object is created from a class. The purpose of a constructor is to initialize the object's attributes, allowing the object to be fully functional and ready to use.\n\nHowever, there are times when you may want to create an object in a different way, or with different initial values, than what is provided by the default constru",
+    "path": "70-Day-70-Class-methods-as-alternative-constructors"
+  },
+  {
+    "id": "71-Day-71-dir-dict-and-help-methods",
+    "day": 71,
+    "title": "71 Dir Dict and Help Methods",
+    "category": "Projects",
+    "code": "class Person:\n  def __init__(self, name, age):\n      self.name = name\n      self.age = age\n      self.version = 1\n\n    \np = Person(\"John\", 30)\nprint(p.__dict__)\n\nprint(help(Person))",
+    "tutorial": "# `dir()`, `__dict__` and `help()` methods in python\nWe must look into `dir()`,  `__dict__()` and `help()` attribute/methods in python. They make it easy for us to understand how classes resolve various functions and executes code. \nIn Python, there are three built-in functions that are commonly used to get information about objects: dir(), __dict__, and help(). Let's take a look at each of them:\n## The `dir()` method\n`dir()`: The dir() function returns a list of all the attributes and methods (",
+    "path": "71-Day-71-dir-dict-and-help-methods"
+  },
+  {
+    "id": "72-Day-72-super-Keyword",
+    "day": 72,
+    "title": "72 Super Keyword",
+    "category": "Projects",
+    "code": "class Employee:\n  def __init__(self, name, id):\n    self.name = name\n    self.id = id\n\nclass Programmer(Employee):\n  def __init__(self, name, id, lang):\n    super().__init__( name, id)\n    self.lang = lang\n\nrohan = Employee(\"Rohan Das\", \"420\")\nharry = Programmer(\"Harry\", \"2345\", \"Python\")\nprint(harry.name)\nprint(harry.id)\nprint(harry.lang)",
+    "tutorial": "# Super keyword in Python \nThe super() keyword in Python is used to refer to the parent class. It is especially useful when a class inherits from multiple parent classes and you want to call a method from one of the parent classes.\n\nWhen a class inherits from a parent class, it can override or extend the methods defined in the parent class. However, sometimes you might want to use the parent class method in the child class. This is where the super() keyword comes in handy.\n\n\nHere's an example of",
+    "path": "72-Day-72-super-Keyword"
+  },
+  {
+    "id": "73-Day-73-MagicDunder-Methods",
+    "day": 73,
+    "title": "73 Magicdunder Methods",
+    "category": "Projects",
+    "code": "from emp import Employee\n\ne = Employee(\"Harry\")\nprint(str(e))\nprint(repr(e))\n# print(e.name)\n# print(len(e))\ne()",
+    "tutorial": "# Magic/Dunder Methods in Python\nThese are special methods that you can define in your classes, and when invoked, they give you a powerful way to manipulate objects and their behaviour.\n\nMagic methods, also known as \u201cdunders\u201d from the double underscores surrounding their names, are powerful tools that allow you to customize the behaviour of your classes. They are used to implement special methods such as the addition, subtraction and comparison operators, as well as some more advanced techniques",
+    "path": "73-Day-73-MagicDunder-Methods"
+  },
+  {
+    "id": "74-Day-74-Method-Overriding",
+    "day": 74,
+    "title": "74 Method Overriding",
+    "category": "Projects",
+    "code": "class Shape:\n  def __init__(self, x, y):\n    self.x = x\n    self.y = y\n    \n  def area(self):\n      return self.x * self.y\n\nclass Circle(Shape):\n    def __init__(self, radius):\n      self.radius = radius\n      super().__init__(radius, radius)\n\n    def area(self):\n        return 3.14 *  super().area()\n      \n# rec = Shape(3, 5)\n# print(rec.area())\n\nc = Circle(5)\nprint(c.area())",
+    "tutorial": "# Method Overriding in Python\n\nMethod overriding is a powerful feature in object-oriented programming that allows you to redefine a method in a derived class. The method in the derived class is said to override the method in the base class. When you create an instance of the derived class and call the overridden method, the version of the method in the derived class is executed, rather than the version in the base class.\n\nIn Python, method overriding is a way to customize the behavior of a class",
+    "path": "74-Day-74-Method-Overriding"
+  },
+  {
+    "id": "75-Day-75-Exercise-7-Solution",
+    "day": 75,
+    "title": "75 Exercise 7 Solution",
+    "category": "Exercise",
+    "code": "import os\n\nfiles = os.listdir(\"clutteredFolder\")\ni = 1\nfor file in files:\n  if file.endswith(\".png\"):\n    print(file)\n    os.rename(f\"clutteredFolder/{file}\", f\"clutteredFolder/{i}.png\")\n    i = i + 1",
+    "tutorial": "Write a program to clear the clutter inside a folder on your computer. \nYou should use os module to rename all the png images from 1.png all the way till n.png where n is the number of png files in that folder. Do the same for other file formats. For example:\n- sfdsf.png --> 1.png\n- vfsf.png --> 2.png\n- this.png --> 3.png\n- design.png --> 4.png\n- name.png --> 5.png\n## [Next Lesson>>](https://replit.com/@codewithharry/76-Day-76-Exercise-8)\n",
+    "path": "75-Day-75-Exercise-7-Solution"
+  },
+  {
+    "id": "76-Day-76-Exercise-8",
+    "day": 76,
+    "title": "76 Exercise 8",
+    "category": "Exercise",
+    "code": "# Write a program to manipulate pdf files using pyPDF. Your programs should be able to merge multiple pdf files into a single pdf. You are welcome to add more functionalities\n# pypdf is a free and open-source pure-python PDF library capable of splitting, merging, cropping, and transforming the pages of PDF files. It can also add custom data, viewing options, and passwords to PDF files. pypdf can retrieve text and metadata from PDFs as well.",
+    "tutorial": "Write a program to manipulate pdf files using pyPDF. Your programs should be able to merge multiple pdf files into a single pdf. You are welcome to add more functionalities\n\npypdf is a free and open-source pure-python PDF library capable of splitting, merging, cropping, and transforming the pages of PDF files. It can also add custom data, viewing options, and passwords to PDF files. pypdf can retrieve text and metadata from PDFs as well.\n## [Next Lesson>>](https://replit.com/@codewithharry/77-Da",
+    "path": "76-Day-76-Exercise-8"
+  },
+  {
+    "id": "77-Day-77-Operator-Overloading",
+    "day": 77,
+    "title": "77 Operator Overloading",
+    "category": "Projects",
+    "code": "class Vector:\n  def __init__(self, i, j, k):\n    self.i = i\n    self.j = j\n    self.k = k\n\n  def __str__(self):\n    return f\"{self.i}i + {self.j}j + {self.k}k\"\n\n  def __add__(self, x):\n    return Vector(self.i + x.i,  self.j+x.j, self.k+x.k) \nv1 = Vector(3, 5, 6)\nprint(v1)\n\nv2 = Vector(1, 2, 9)\nprint(v2)\n\nprint(v1 + v2)\nprint(type(v1 + v2))",
+    "tutorial": "# Operator Overloading in Python: An Introduction\n\nOperator Overloading is a feature in Python that allows developers to redefine the behavior of mathematical and comparison operators for custom data types. This means that you can use the standard mathematical operators (+, -, *, /, etc.) and comparison operators (>, <, ==, etc.) in your own classes, just as you would for built-in data types like int, float, and str.\n\n## Why do we need operator overloading?\n\nOperator overloading allows you to cr",
+    "path": "77-Day-77-Operator-Overloading"
+  },
+  {
+    "id": "78-Day-78-Single-Inheritance",
+    "day": 78,
+    "title": "78 Single Inheritance",
+    "category": "Projects",
+    "code": "class Animal:\n    def __init__(self, name, species):\n        self.name = name\n        self.species = species\n        \n    def make_sound(self):\n        print(\"Sound made by the animal\")\n\nclass Dog(Animal):\n    def __init__(self, name, breed):\n        Animal.__init__(self, name, species=\"Dog\")\n        self.breed = breed\n        \n    def make_sound(self):\n        print(\"Bark!\")\n\nd = Dog(\"Dog\", \"Doggerman\")\nd.make_sound()\n\na = Animal(\"Dog\", \"Dog\")\na.make_sound()\n\n# Quick Quiz: Implement a Cat class by using the animal class. Add some methods specific to cat",
+    "tutorial": "# Single Inheritance in Python\nSingle inheritance is a type of inheritance where a class inherits properties and behaviors from a single parent class. This is the simplest and most common form of inheritance.\n\n## Syntax\nThe syntax for single inheritance in Python is straightforward and easy to understand. To create a new class that inherits from a parent class, simply specify the parent class in the class definition, inside the parentheses, like this:\n\n```python\nclass ChildClass(ParentClass):\n  ",
+    "path": "78-Day-78-Single-Inheritance"
+  },
+  {
+    "id": "79-Day-79-Multiple-Inheritance",
+    "day": 79,
+    "title": "79 Multiple Inheritance",
+    "category": "Projects",
+    "code": "class Employee:\n  def __init__(self, name):\n    self.name = name\n  def show(self):\n    print(f\"The name is {self.name}\")\n\nclass Dancer:\n  def __init__(self, dance):\n    self.dance = dance\n\n  def show(self):\n    print(f\"The dance is {self.dance}\")\n\nclass DancerEmployee(Employee, Dancer):\n  def __init__(self, dance, name):\n    self.dance = dance\n    self.name = name\n\no  = DancerEmployee(\"Kathak\", \"Shivani\")\nprint(o.name)\nprint(o.dance)\no.show() \nprint(DancerEmployee.mro())",
+    "tutorial": "# Multiple Inheritance in Python\nMultiple inheritance is a powerful feature in object-oriented programming that allows a class to inherit attributes and methods from multiple parent classes. This can be useful in situations where a class needs to inherit functionality from multiple sources.\n\n\n## Syntax\nIn Python, multiple inheritance is implemented by specifying multiple parent classes in the class definition, separated by commas.\n```python\nclass ChildClass(ParentClass1, ParentClass2, ParentClas",
+    "path": "79-Day-79-Multiple-Inheritance"
+  },
+  {
+    "id": "80-Day-80-Multilevel-Inheritance",
+    "day": 80,
+    "title": "80 Multilevel Inheritance",
+    "category": "Projects",
+    "code": "class Animal:\n    def __init__(self, name, species):\n        self.name = name\n        self.species = species\n        \n    def show_details(self):\n        print(f\"Name: {self.name}\")\n        print(f\"Species: {self.species}\")\n        \nclass Dog(Animal):\n    def __init__(self, name, breed):\n        Animal.__init__(self, name, species=\"Dog\")\n        self.breed = breed\n        \n    def show_details(self):\n        Animal.show_details(self)\n        print(f\"Breed: {self.breed}\")\n        \nclass GoldenRetriever(Dog):\n    def __init__(self, name, color):\n        Dog.__init__(self, name, breed=\"Golden Retriever\")\n        self.color = color\n        \n    def show_details(self):\n        Dog.show_details(self)\n        print(f\"Color: {self.color}\")\n\no = Dog(\"tommy\", \"Black\")\no.show_details()\nprint(GoldenRetriever.mro())\n\n",
+    "tutorial": "# Multilevel Inheritance in Python\nMultilevel inheritance is a type of inheritance in object-oriented programming where a derived class inherits from another derived class. This type of inheritance allows you to build a hierarchy of classes where one class builds upon another, leading to a more specialized class.\n\nIn Python, multilevel inheritance is achieved by using the class hierarchy. The syntax for multilevel inheritance is quite simple and follows the same syntax as single inheritance.\n\n##",
+    "path": "80-Day-80-Multilevel-Inheritance"
+  },
+  {
+    "id": "81-Day-81-Hybrid-and-Hierarchical-Inheritance",
+    "day": 81,
+    "title": "81 Hybrid and Hierarchical Inheritance",
+    "category": "Projects",
+    "code": "# Example of Hybrid Inheritance \nclass BaseClass:\n  pass\n\nclass Derived1(BaseClass):\n  pass  \n\nclass Derived2(BaseClass):\n  pass  \n\nclass Derived3(Derived1, Derived2):\n  pass\n\n# Hierarchical Inheritance\nclass BaseClass:\n  pass\n\nclass D1(BaseClass):\n  pass\n\nclass D2(BaseClass):\n  pass\n\nclass D3(D1):\n  pass",
+    "tutorial": "# Hybrid Inheritance in Python\nHybrid inheritance is a combination of multiple inheritance and single inheritance in object-oriented programming. It is a type of inheritance in which multiple inheritance is used to inherit the properties of multiple base classes into a single derived class, and single inheritance is used to inherit the properties of the derived class into a sub-derived class.\n\nIn Python, hybrid inheritance can be implemented by creating a class hierarchy, in which a base class i",
+    "path": "81-Day-81-Hybrid-and-Hierarchical-Inheritance"
+  },
+  {
+    "id": "82-Day-82-Exercise-8-Solution",
+    "day": 82,
+    "title": "82 Exercise 8 Solution",
+    "category": "Exercise",
+    "code": "from PyPDF2 import PdfWriter\nimport os\n\nmerger = PdfWriter()\nfiles = [file for file in os.listdir() if file.endswith(\".pdf\")]\n\nfor pdf in files:\n    merger.append(pdf)\n\nmerger.write(\"merged-pdf.pdf\")\nmerger.close()",
+    "tutorial": "Write a program to manipulate pdf files using pyPDF. Your programs should be able to merge multiple pdf files into a single pdf. You are welcome to add more functionalities\n\npypdf is a free and open-source pure-python PDF library capable of splitting, merging, cropping, and transforming the pages of PDF files. It can also add custom data, viewing options, and passwords to PDF files. pypdf can retrieve text and metadata from PDFs as well.\n## [Next Lesson>>](https://replit.com/@codewithharry/83-Da",
+    "path": "82-Day-82-Exercise-8-Solution"
+  },
+  {
+    "id": "83-Day-83-Exercise-9",
+    "day": 83,
+    "title": "83 Exercise 9",
+    "category": "Exercise",
+    "code": "",
+    "tutorial": "Write a program to pronounce list of names using win32 API. \nIf you are given a list l as follows:\n```python\nl = [\"Rahul\", \"Nishant\", \"Harry\"]\n```\nYour program should pronouce:\n```\nShoutout to Rahul\nShoutout to Nishant\nShoutout to Harry\n```\nNote: If you are not using windows, try to figure out how to do the same thing using some other package\n## [Next Lesson>>](https://replit.com/@codewithharry/84-Day-84-Time-Module)\n\n",
+    "path": "83-Day-83-Exercise-9"
+  },
+  {
+    "id": "84-Day-84-Time-Module",
+    "day": 84,
+    "title": "84 Time Module",
+    "category": "Projects",
+    "code": "import time \n\n# def usingWhile():\n#   i = 0\n#   while i<50000:\n#     i = i +1\n#     print(i) \n\n# def usingFor():\n#   for i in range(50000):\n#     print(i)\n\n# init = time.time()\n# usingFor()\n# t1 = time.time() - init\n# init = time.time()\n# usingWhile()\n# print(time.time() - init)\n# print(t1)\n\n\n# print(4)\n# time.sleep(3)\n# print(\"This is printed after 3 seconds\")\n \nt = time.localtime()\nformatted_time = time.strftime(\"%Y-%m-%d %H:%M:%S\", t)\n\nprint(formatted_time) ",
+    "tutorial": "# The time Module in Python\nThe `time` module in Python provides a set of functions to work with time-related operations, such as timekeeping, formatting, and time conversions. This module is part of the Python Standard Library and is available in all Python installations, making it a convenient and essential tool for a wide range of applications. In this day 84 tutorial, we'll explore the `time` module in Python and see how it can be used in different scenarios.\n\n## time.time()\nThe `time.time()",
+    "path": "84-Day-84-Time-Module"
+  },
+  {
+    "id": "85-Day-85-Command-Line-Utility",
+    "day": 85,
+    "title": "85 Command Line Utility",
+    "category": "Projects",
+    "code": "import argparse\nimport requests\n\ndef download_file(url, local_filename): \n  if local_filename is None:\n    local_filename = url.split('/')[-1]\n    # NOTE the stream=True parameter below\n  with requests.get(url, stream=True) as r:\n      r.raise_for_status()\n      with open(local_filename, 'wb') as f:\n          for chunk in r.iter_content(chunk_size=8192): \n              # If you have chunk encoded response uncomment if\n              # and set chunk_size parameter to None.\n              #if chunk: \n              f.write(chunk)\n  return local_filename\n  \nparser = argparse.ArgumentParser()\n\n# Add command line arguments\nparser.add_argument(\"url\", help=\"Url of the file to download\")\n# parser.add_argument(\"output\", help=\"by which name do you want to save your file\")\nparser.add_argument(\"-o\", \"--output\", type=str, help=\"Name of the file\", default=None)\n\n# Parse the arguments\nargs = parser.parse_args()\n\n# Use the arguments in your code\nprint(args.url)\nprint(args.output, type(args.output))\ndownload_file(args.url, args.output)",
+    "tutorial": "# Creating Command Line Utilities in Python\nCommand line utilities are programs that can be run from the terminal or command line interface, and they are an essential part of many development workflows. In Python, you can create your own command line utilities using the built-in `argparse` module.\n\n## Syntax\nHere is the basic syntax for creating a command line utility using `argparse` in Python:\n```python\nimport argparse\n\nparser = argparse.ArgumentParser()\n\n# Add command line arguments\nparser.ad",
+    "path": "85-Day-85-Command-Line-Utility"
+  },
+  {
+    "id": "86-Day-86-Walrus-Operator",
+    "day": 86,
+    "title": "86 Walrus Operator",
+    "category": "Projects",
+    "code": "# walrus operator :=\n\n# new to Python 3.8\n# assignment expression aka walrus operator\n# assigns values to variables as part of a larger expression\n\n# happy = False\n# print(happy)\n\n# print(happy := True)\n\n# foods = list()\n# while True:\n#   food = input(\"What food do you like?: \")\n#   if food == \"quit\":\n#       break\n#   foods.append(food)\nfoods = list()\nwhile (food := input(\"What food do you like?: \")) != \"quit\":\n    foods.append(food)",
+    "tutorial": "# The Walrus Operator in Python\nThe Walrus Operator is a new addition to Python 3.8 and allows you to assign a value to a variable within an expression. This can be useful when you need to use a value multiple times in a loop, but don't want to repeat the calculation.\n\nThe Walrus Operator is represented by the `:=` syntax and can be used in a variety of contexts including while loops and if statements.\n\nHere's an example of how you can use the Walrus Operator in a while loop:\n```python\nnumbers =",
+    "path": "86-Day-86-Walrus-Operator"
+  },
+  {
+    "id": "87-Day-87-Shutil-Module",
+    "day": 87,
+    "title": "87 Shutil Module",
+    "category": "Projects",
+    "code": "import shutil\nimport os\n\n# shutil.copy(\"main.py\", \"main2.py\")\n# shutil.copytree(\".tutorial\", \"mytutorial\")\n# shutil.move(\".tutorial/file.file\", \"file.file\")\n# shutil.rmtree(\"mytutorial\")\nos.remove(\"file.file\")",
+    "tutorial": "# Shutil Module in Python\nShutil is a Python module that provides a higher level interface for working with file and directories. The name \"shutil\" is short for shell utility. It provides a convenient and efficient way to automate tasks that are commonly performed on files and directories. In this repl, we'll take a closer look at the shutil module and its various functions and how they can be used in Python.\n\n## Importing shutil\nThe syntax for importing the shutil module is as follows:\n```pytho",
+    "path": "87-Day-87-Shutil-Module"
+  },
+  {
+    "id": "88-Day-88-Exercise-9-Solution",
+    "day": 88,
+    "title": "88 Exercise 9 Solution",
+    "category": "Exercise",
+    "code": "# For Mac\nfrom os import system\nnames = [\"StupidProgramm1\",\"AayushGarg15\", \"Yuniek\", \"NiteshUpadhyay2\", \"RAMESHKUMAR69\", \"AshishKushwaha4\", \"AshokBhatt\", \"MILLANDREME\", \"ValorantAccoun4\", \"Sanjeevthakur8\", \"vivekRaogaddema\", \"NilutpalBaruah\", \"Priyanshu48\", \"KenZi2\", \"RahulGoyal14\", \"KartikeySurbhi\", \"AnirbanPati\", \"RohanPudasaini\", \"TechBlogs\", \"joelthomas1103\", \"dhairyapawaia\", \"PrithviSingh15\", \"GoogolChad\", \"Moinhusen\", \"mahi98989897\", \"Blitzfan1\", \"umang001\", \"AvijitManna1\", \"Mr-NeonNeon\", \"MaryamTatheer\", \"NishantJaiswal2\", \"AnonymousBuddy1\", \"MaryamTatheer\", \"GyanKumar1\", \"StarVipin\", \"vivekRaogaddema\", \"RaviSharma34\", \"AhsanTariq3\", \"gagankj\", \"ProgrammerShray\", \"AvijitDey5\", \"Anshuman097\", \"AnchalGupta9\", \"StupidProgramm1\", \"HimanshuKumar96\", \"hnxpriyanshu\", \"MaxM50\", \"piyushgoyall\", \"DEMANDHERE\", \"KrishnaAnand2\", \"SurajVishwaka10\", \"NominathKuwar\", \"firozeeIII\", \"jawad9899\", \"ArunavaAdhikari\", \"Quazi-Misbah-Raza\", \"HistoricMind\", \"Rajbir98\", \"AkshayNivate\", \"vivekRaogaddema\", \"maanitgill\", \"krushnsinh\", \"universelhome\", \"OPGAMEROPGAMERm\", \"universelhome\", \"learningtocodewithabdullah\", \"Abdullah426351\", \"SagarPathak3\", \"SAMARTH-VERMA\", \"PrithvirajPati3\", \"SAURABHTRIPATH6\", \"SumanRajak\", \"Swayam2004\", \"Joydip2002\", \"PulkitPareek\", \"RatnakarGautam221b\", \"tassawerzaidi\", \"GRyHacker\", \"uatta8088\", \"Athcode\", \"PrasoonShrivast\", \"piyushgoyall\", \"Saptak291\", \"PratyakshDhankh\", \"ZayanAhmad2\", \"Ali-RazaRaza9\", \"TridevJha\", \"KrrishHalder\", \"HeroProgrammin1\", \"Sanjeev-Kumar78\", \"AryanKushwaha2\", \"GalluBhai\", \"AB265\", \"AayushGarg15\", \"StupidProgramm1\", \"dheerajkumar68\", \"ArpitJaiswal2\", \"Fighters006\", \"AviPandit\", \"mrz004\", \"AviPandit\", \"MihirSingh4\", \"Nks-hkhk\", \"msCoder5\", \"SURAJGUSAIN1\", \"DivyanandPandey\", \"AhmadShuja\", \"JaydeepSindhav\", \"Champ7239\", \"piyushgoyall\", \"Joydip2002\", \"MukulVerma8745\", \"V-Durgeshwar-Ra\", \"SaacheKapoor\", \"41-GauravGaurav\", \"VeersinghZanka1\", \"LegendVibhu\", \"YashAgr\", \"vivekRaogaddema\", \"Priyanshu-kundu\", \"iamarghamallick\", \"samad90\", \"iam",
+    "tutorial": "Write a program to pronounce list of names using win32 API. \nIf you are given a list l as follows:\n```python\nl = [\"Rahul\", \"Nishant\", \"Harry\"]\n```\nYour program should pronouce:\n```\nShoutout to Rahul\nShoutout to Nishant\nShoutout to Harry\n```\nNote: If you are not using windows, try to figure out how to do the same thing using some other package\n## [Next Lesson>>](https://replit.com/@codewithharry/89-Day-89-Requests-Module)\n\n",
+    "path": "88-Day-88-Exercise-9-Solution"
+  },
+  {
+    "id": "89-Day-89-Requests-Module",
+    "day": 89,
+    "title": "89 Requests Module",
+    "category": "Projects",
+    "code": "import requests \nfrom bs4 import BeautifulSoup\nurl = \"https://www.codewithharry.com/blogpost/django-cheatsheet/\"\nr = requests.get(url)\n# print(r.text)\n\n\nsoup = BeautifulSoup(r.text, 'html.parser')\nprint(soup.prettify())\nfor heading in soup.find_all(\"h2\"):\n  print(heading.text)\n# url = \"https://jsonplaceholder.typicode.com/posts\"\n\n# data = {\n#     \"title\": 'harry',\n#     \"body\": 'bhai',\n#     \"userId\": 12,\n#   }\n# headers =  {\n#     'Content-type': 'application/json; charset=UTF-8',\n#   }\n# response = requests.post(url, headers=headers, json=data)\n\n# print(response.text)",
+    "tutorial": "# Requests module in python\nThe Python Requests module is an HTTP library that enables developers to send HTTP requests in Python. This module enables you to send HTTP requests using Python code and makes it possible to interact with APIs and web services.\n## Installation \n```bash\npip install requests\n```\n## Get Request\nOnce you have installed the Requests module, you can start using it to send HTTP requests. Here is a simple example that sends a GET request to the Google homepage:\n```python\nimp",
+    "path": "89-Day-89-Requests-Module"
+  },
+  {
+    "id": "90-Day-90-Exercise-10",
+    "day": 90,
+    "title": "90 Exercise 10",
+    "category": "Exercise",
+    "code": "",
+    "tutorial": "# Exercise 10\nUse the NewsAPI and the requests module to fetch the daily news related to different topics. \nGo to: https://newsapi.org/\nand explore the various options to build you application\n## [Next Lesson>>](https://replit.com/@codewithharry/91-Day-91-Generators-in-Python)\n",
+    "path": "90-Day-90-Exercise-10"
+  },
+  {
+    "id": "91-Day-91-Generators-in-Python",
+    "day": 91,
+    "title": "91 Generators in Python",
+    "category": "Mastery",
+    "code": "def my_generator():\n    for i in range(50000000):\n      # Complex computations\n      yield i\n\ngen = my_generator()\n# print(next(gen))\n# print(next(gen))\n# print(next(gen))\n\nfor j in  gen:\n  print(j)",
+    "tutorial": "# Generators in Python\nGenerators in Python are special type of functions that allow you to create an iterable sequence of values. A generator function returns a generator object, which can be used to generate the values one-by-one as you iterate over it. Generators are a powerful tool for working with large or complex data sets, as they allow you to generate the values on-the-fly, rather than having to create and store the entire sequence in memory.\n\n## Creating a Generator\nIn Python, you can c",
+    "path": "91-Day-91-Generators-in-Python"
+  },
+  {
+    "id": "92-Day-92-Function-Caching",
+    "day": 92,
+    "title": "92 Function Caching",
+    "category": "Mastery",
+    "code": "from functools import lru_cache\nimport time\n\n@lru_cache(maxsize=None)\ndef fx(n):\n  time.sleep(5)\n  return n*5\n    \n\nprint(fx(20))\nprint(\"done for 20\")\nprint(fx(2))\nprint(\"done for 2\")\nprint(fx(6))\nprint(\"done for 6\")\n\nprint(fx(20))\nprint(\"done for 20\")\nprint(fx(2))\nprint(\"done for 2\")\nprint(fx(6))\nprint(\"done for 6\")\nprint(fx(61))\nprint(\"done for 61\")\n# Output: 6765",
+    "tutorial": "# Function Caching in Python \nFunction caching is a technique for improving the performance of a program by storing the results of a function call so that you can reuse the results instead of recomputing them every time the function is called. This can be particularly useful when a function is computationally expensive, or when the inputs to the function are unlikely to change frequently.\n\nIn Python, function caching can be achieved using the functools.lru_cache decorator. The functools.lru_cach",
+    "path": "92-Day-92-Function-Caching"
+  },
+  {
+    "id": "93-Day-93-Exercise-10-Solution",
+    "day": 93,
+    "title": "93 Exercise 10 Solution",
+    "category": "Exercise",
+    "code": "import requests\nimport json\n\nquery = input(\"What type of news are you interested in? \")\nurl = f\"https://newsapi.org/v2/everything?q={query}&from=2023-01-28&sortBy=publishedAt&apiKey=dbe57b028aeb41e285a226a94865f7a7\"\nr = requests.get(url)\nnews = json.loads(r.text)\n# print(news, type(news))\nfor article in news[\"articles\"]:\n  print(article[\"title\"])\n  print(article[\"description\"])\n  print(\"--------------------------------------\")\n  \n",
+    "tutorial": "#Exercise 10\nUse the NewsAPI and the requests module to fetch the daily news related to different topics. Go to: https://newsapi.org/ and explore the various options to build you application\n## [Next Lesson>>](https://replit.com/@codewithharry/94-Day-94-Exercise-11)\n",
+    "path": "93-Day-93-Exercise-10-Solution"
+  },
+  {
+    "id": "94-Day-94-Exercise-11",
+    "day": 94,
+    "title": "94 Exercise 11",
+    "category": "Exercise",
+    "code": "",
+    "tutorial": "## Exercise 11 - Drink Water Reminder\nWrite a python program which reminds you of drinking water every hour or two. Your program can either beep or send desktop notifications for a specific operating system\n## [Next Lesson>>](https://replit.com/@codewithharry/95-Day-95-Regular-Expressions)\n",
+    "path": "94-Day-94-Exercise-11"
+  },
+  {
+    "id": "95-Day-95-Regular-Expressions",
+    "day": 95,
+    "title": "95 Regular Expressions",
+    "category": "Mastery",
+    "code": "# https://regexr.com/\nimport re\n\npattern = r\"[A-Z]+yclodne\"\ntext = '''Cyclone Dumazile was a strong tropical cyclone in the South-West Indian Ocean that affected Madagascar and R\u00e9union in early March 2018. Dumazile originated from a cyclone Dyclone low-pressure area that formed near Agal\u00e9ga on 27 February. It became a tropical disturbance on 2 March, and was named the next day after attaining tropical storm status. Dumazile reached its peak intensity on 5 March, with 10-minute sustained winds of 165 km/h (105 mph), 1-minute sustained winds of 205 km/h (125 mph), and a central atmospheric pressure of 945 hPa (27.91 inHg). As it tracked southeastwards, Dumazile weakened steadily over the next couple of days due to wind shear, and became a post-tropical cyclone on 7 March\n\n'''\n\nmatch = re.search(pattern, text)\nprint(match)\n\n# matches = re.finditer(pattern, text)\n# for match in matches:\n#   print(match.span()) \n#   print(text[match.span()[0]: match.span()[1]])",
+    "tutorial": "# Regular Expressions in Python\nRegular expressions, or \"regex\" for short, are a powerful tool for working with strings and text data in Python. They allow you to match and manipulate strings based on patterns, making it easy to perform complex string operations with just a few lines of code.\n## Metacharacters in regular expressions\n``` \n[]  Represent a character class\n^   Matches the beginning\n$   Matches the end\n.   Matches any character except newline\n?   Matches zero or one occurrence.\n|   M",
+    "path": "95-Day-95-Regular-Expressions"
+  },
+  {
+    "id": "96-Day-96-AsyncIO-in-Python",
+    "day": 96,
+    "title": "96 Asyncio in Python",
+    "category": "Mastery",
+    "code": "import time\nimport asyncio \nimport requests\n\n\nasync def function1():\n  print(\"func 1\") \n  URL = \"https://wallpaperaccess.in/public/uploads/preview/1920x1200-desktop-background-ultra-hd-wallpaper-wiki-desktop-wallpaper-4k-.jpg\"\n  response = requests.get(URL)\n  open(\"instagram.ico\", \"wb\").write(response.content)\n   \n  return \"Harry\"\n  \nasync def function2():\n  print(\"func 2\") \n  URL = \"https://p4.wallpaperbetter.com/wallpaper/490/433/199/nature-2560x1440-tree-snow-wallpaper-preview.jpg\"\n  response = requests.get(URL)\n  open(\"instagram2.jpg\", \"wb\").write(response.content)\n  \nasync def function3():\n  print(\"func 3\")\n  URL = \"https://c4.wallpaperflare.com/wallpaper/622/676/943/3d-hd-wikipedia-3d-wallpaper-preview.jpg\"\n  response = requests.get(URL)\n  open(\"instagram3.ico\", \"wb\").write(response.content)\n\nasync def main():\n  # await function1()\n  # await function2()\n  # await function3()\n  # return 3\n  L = await asyncio.gather(\n        function1(),\n        function2(),\n        function3(),\n    )\n  print(L)\n  # task = asyncio.create_task(function1())\n  # # await function1()\n  # await function2()\n  # await function3()\n\nasyncio.run(main())",
+    "tutorial": "# Async IO in Python\nAsynchronous I/O, or async for short, is a programming pattern that allows for high-performance I/O operations in a concurrent and non-blocking manner. In Python, async programming is achieved through the use of the `asyncio` module and asynchronous functions.\n\n## Syntax\nHere is the basic syntax for creating an asynchronous function in Python:\n```python\nimport asyncio\n\nasync def my_async_function():\n    # asynchronous code here\n    await asyncio.sleep(1)\n    return \"Hello, A",
+    "path": "96-Day-96-AsyncIO-in-Python"
+  },
+  {
+    "id": "97-Day-97-MultiThreading-in-Python",
+    "day": 97,
+    "title": "97 Multithreading in Python",
+    "category": "Mastery",
+    "code": "import threading\nimport time\nfrom concurrent.futures import ThreadPoolExecutor\n\n# Indicates some task being done\ndef func(seconds):\n  print(f\"Sleeping for {seconds} seconds\")\n  time.sleep(seconds)\n  return seconds\n\ndef main():\n  time1 = time.perf_counter()\n  # Normal Code\n  # func(4) \n  # func(2)\n  # func(1)\n  \n  \n  # Same code using Threads\n  t1 = threading.Thread(target=func, args=[4])\n  t2 = threading.Thread(target=func, args=[2])\n  t3 = threading.Thread(target=func, args=[1])\n  t1.start()\n  t2.start()\n  t3.start()\n  \n  t1.join()\n  t2.join()\n  t3.join()\n  # Calculating Time \n  time2 = time.perf_counter()\n  print(time2 - time1)\n\n\ndef poolingDemo():\n  with ThreadPoolExecutor() as executor:\n    # future1 = executor.submit(func, 3)\n    # future2 = executor.submit(func, 2)\n    # future3 = executor.submit(func, 4)\n    # print(future1.result())\n    # print(future2.result())\n    # print(future3.result())\n    l = [3, 5, 1, 2]\n    results = executor.map(func, l)\n    for result in results:\n      print(result)\n\n\npoolingDemo()",
+    "tutorial": "# Multithreading in Python\n\nMultithreading is a technique in programming that allows multiple threads of execution to run concurrently within a single process. In Python, we can use the threading module to implement multithreading. In this tutorial, we will take a closer look at the threading module and its various functions and how they can be used in Python.\n\n## Importing Threading\nWe can use threading by importing the threading module.\n\n```python\nimport threading\n```\n\n## Creating a thread\nTo ",
+    "path": "97-Day-97-MultiThreading-in-Python"
+  },
+  {
+    "id": "98-Day-98-MultiProcessing-in-Python",
+    "day": 98,
+    "title": "98 Multiprocessing in Python",
+    "category": "Mastery",
+    "code": "import concurrent.futures\nimport requests\n\ndef downloadFile(url, name):\n  print(f\"Started Downloading {name}\")\n  response = requests.get(url)\n  open(f\"files/file{name}.jpg\", \"wb\").write(response.content)\n  print(f\"Finished Downloading {name}\")\n \n\n\nurl = \"https://picsum.photos/2000/3000\"\n# pros = []\n# for i in range(50):\n#   # downloadFile(url, i)\n#   p = multiprocessing.Process(target=downloadFile, args=[url, i])\n#   p.start()\n#   pros.append(p)\n\n# for p in pros:\n#   p.join()\n\nwith concurrent.futures.ProcessPoolExecutor() as executor:\n  l1 = [url for i in range(60)]\n  l2 = [i for i in range(60)]\n  results = executor.map(downloadFile, l1, l2)\n  for r in results:\n    print(r)",
+    "tutorial": "# Multiprocessing in Python\nMultiprocessing is a Python module that provides a simple way to run multiple processes in parallel. It allows you to take advantage of multiple cores or processors on your system and can significantly improve the performance of your code. In this repl, we'll take a closer look at the multiprocessing module and its various functions and how they can be used in Python.\n\n## Importing Multiprocessing\nWe can use multiprocessing by importing the multiprocessing module. \n\n`",
+    "path": "98-Day-98-MultiProcessing-in-Python"
+  },
+  {
+    "id": "99-Day-99-Exercise-11-Solution",
+    "day": 99,
+    "title": "99 Exercise 11 Solution",
+    "category": "Exercise",
+    "code": "import os\nimport time \n\nREPEAT_INTERVAL = 3600 # Repeat frequency in seconds\n\nwhile True:\n  command = \"osascript -e \\'say \\\"Hey Harry drink water\\\"\\'; osascript -e \\'display alert \\\"Hey Harry, Drink water\\\"\\'\"\n  os.system(command)\n  time.sleep(REPEAT_INTERVAL)",
+    "tutorial": "## Exercise 11 - Drink Water Reminder (Solution)\nWrite a python program which reminds you of drinking water every hour or two. Your program can either beep or send desktop notifications for a specific operating system\n## [Next Lesson>>](https://replit.com/@codewithharry/100-Day-100-Conclusion-Where-to-go-from-here)\n",
+    "path": "99-Day-99-Exercise-11-Solution"
+  },
+  {
+    "id": "100-Day-100-Conclusion-Where-to-go-from-here",
+    "day": 100,
+    "title": "100 Conclusion Where to Go From Here",
+    "category": "Mastery",
+    "code": "",
+    "tutorial": "# Conclusion\nCongratulations on completing the 100 days of Python code challenge! You have likely gained a solid foundation in the language and developed a range of skills, from basic syntax to more advanced concepts such as object-oriented programming. However, this is just the beginning of your journey with Python. There are many more topics to explore, including machine learning, web development, game development, and more.\n\n## Where to go from here:\nTo continue your learning journey, conside",
+    "path": "100-Day-100-Conclusion-Where-to-go-from-here"
+  }
+]
